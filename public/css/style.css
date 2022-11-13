@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Jomhuria';
+
+}
+
+
+main {
+    min-height: 100vh;
+    background-image: url('../img/Background_00096.jpg');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.glass {
+    display: flex;
+    background: white;
+    min-height: 80vh;
+    width: 70%;
+    background: linear-gradient(to right bottom, rgba(29, 13, 136, 0.7), rgba(71, 62, 142, 0.3));
+    border-radius: 2rem;
+    z-index: 2;
+    backdrop-filter: blur(2rem);
+
+}
+
+.circle1,
+.circle2 {
+    background: white;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+    height: 15rem;
+    width: 15rem;
+    position: absolute;
+    border-radius: 50%;
+
+}
+
+.circle1 {
+    top: 5%;
+    right: 5%;
+}
+
+.circle2 {
+    bottom: 5%;
+    left: 5%;
+}
+
+.icon {
+    height: 2rem;
+    width: 2rem;
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(171deg) brightness(104%) contrast(108%);
+    opacity: 0.8;
+}
+
+.mech_logo {
+    height: 10rem;
+    width: 10rem;
+    opacity: 0.8;
+}
+
+.l-dashboard {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    background: linear-gradient(to right bottom, rgba(240, 230, 230, 0.7), rgba(98, 98, 98, 0.1));
+    border-radius: 2rem;
+}
+
+.r-dashboard {
+    flex: 3;
+
+}
+
+.logo_img {
+    height: 10rem;
+    width: auto;
+    display: flex;
+    justify-content: center;
+
+}
+
+.link {
+    display: flex;
+    margin: 0.5rem 0rem;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    color: white;
+    opacity: 0.8;
+
+}
+
+.link h2 {
+    padding: 0rem 1rem;
+    font-size: 2rem;
+    opacity: 0.8;
+    font-weight: 100;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+a {
+    color: aqua;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 100;
+    color: rgb(255, 255, 255);
+    opacity: 0.7;
+
+}
+
+h2 {
+    color: rgba(255, 255, 255, 0.952);
+}
+
+.status {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 5rem;
+}
+
+/****************** MAGIC CARD ****************/
+/* @property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
+
+:root {
+    --card-height: 5rem;
+    --card-width: 7rem;
+}
+
+
+.card {
+    background: #191c29;
+    width: var(--card-width);
+    height: var(--card-height);
+    padding: 3px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 1.5em;
+    color: rgb(88 199 250 / 0%);
+    cursor: pointer;
+    font-family: cursive;
+}
+
+.card::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
+}
+
+.card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+    opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        --rotate: 0deg;
+    }
+
+    100% {
+        --rotate: 360deg;
+    }
+} */
