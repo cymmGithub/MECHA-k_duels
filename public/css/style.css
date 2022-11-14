@@ -21,7 +21,7 @@ main {
     background: white;
     min-height: 80vh;
     width: 70%;
-    background: linear-gradient(to right bottom, rgba(29, 13, 136, 0.7), rgba(71, 62, 142, 0.3));
+    background: linear-gradient(to right bottom, rgba(88, 191, 243, 0.7), rgba(80, 156, 222, 0.3));
     border-radius: 2rem;
     z-index: 2;
     backdrop-filter: blur(2rem);
@@ -83,6 +83,7 @@ main {
     width: auto;
     display: flex;
     justify-content: center;
+    opacity: 0.8;
 
 }
 
@@ -127,6 +128,17 @@ h2 {
     flex-direction: column;
     justify-content: space-evenly;
     margin: 5rem;
+}
+
+th {
+    font-size: 3rem;
+    padding: 2rem;
+}
+
+li {
+    display: flex;
+    font-size: 2rem;
+    justify-content: space-evenly;
 }
 
 /****************** MAGIC CARD ****************/

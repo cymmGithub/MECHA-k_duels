@@ -1,11 +1,12 @@
-const ranking = document.querySelector('.ranking-ol');
+const ranking = document.querySelector('.ranking_list');
 
-
+console.log(ranking);
 
 (async() => {
     const res = await fetch('/hall-of-fame/top-mechs');
     const data = await res.json();
-    console.log(data);
+
+    
     createRanking(data)
 })();
 
@@ -16,7 +17,7 @@ function createRanking(data) {
 
         li.textContent = `${el.name} - ${el.wins}`;
 
-
+        console.log(el);
         ranking.appendChild(li);
 
 

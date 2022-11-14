@@ -1,4 +1,5 @@
 import { Router } from "express";
+import * as path from "path";
 
 
 export const homeRouter = Router();
@@ -7,6 +8,9 @@ export const homeRouter = Router();
 
 homeRouter
 
-    .get('/', (req, res) => {
-        res.render('home/home')
+    .get('/', async (req, res) => {
+        res
+            .sendFile('index.html', {
+                root: path.join(__dirname, '../public/html'),
+            })
     })
