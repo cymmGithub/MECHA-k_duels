@@ -74,8 +74,42 @@ main {
 }
 
 .r-dashboard {
-    flex: 3;
+    display: flex;
 
+    flex-direction: column;
+    flex: 3;
+    margin: 5rem;
+
+}
+
+.home_img_container {
+    display: inline-block;
+    position: absolute;
+    top: 15rem;
+    left: 14rem;
+
+
+}
+
+.home_card {
+    position: relative;
+    top: 1rem;
+    display: flex;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
+    font-size: 2rem;
+    border-radius: 1rem;
+    padding: 2.3rem;
+    margin: 0;
+    box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.302);
+    opacity: 0.8;
+
+}
+
+
+
+.img_home {
+    height: 18rem;
+    width: auto;
 }
 
 .logo_img {
@@ -141,73 +175,36 @@ li {
     justify-content: space-evenly;
 }
 
-/****************** MAGIC CARD ****************/
-/* @property --rotate {
-    syntax: "<angle>";
-    initial-value: 132deg;
-    inherits: false;
+/********************** PLAY BUTTON ********************/
+
+.play_btn {
+    position: absolute;
+    top: 13rem;
+    left: 38rem;
+    height: 2rem;
+    width: 150px;
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding-top: 5px;
+    margin-bottom: 6rem;
+    color: #fcfcfc;
+    background: #0077b6;
+    border: 1px solid #f6f5f6;
+    border-radius: 10px;
+    opacity: 0.8;
+
 }
 
-:root {
-    --card-height: 5rem;
-    --card-width: 7rem;
-}
-
-
-.card {
-    background: #191c29;
-    width: var(--card-width);
-    height: var(--card-height);
-    padding: 3px;
-    position: relative;
-    border-radius: 6px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    font-size: 1.5em;
-    color: rgb(88 199 250 / 0%);
+.play_btn:focus,
+.play_btn:hover,
+.play_btn:active {
+    transition: 1s;
+    border: none;
+    text-transform: uppercase;
+    background: #ffd60a;
+    color: #0077b6;
+    border: 1px solid #0077b6;
+    transform: translateY(-0.25em);
     cursor: pointer;
-    font-family: cursive;
 }
-
-.card::before {
-    content: "";
-    width: 104%;
-    height: 102%;
-    border-radius: 8px;
-    background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
-    position: absolute;
-    z-index: -1;
-    top: -1%;
-    left: -2%;
-    animation: spin 2.5s linear infinite;
-}
-
-.card::after {
-    position: absolute;
-    content: "";
-    top: calc(var(--card-height) / 6);
-    left: 0;
-    right: 0;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    transform: scale(0.8);
-    filter: blur(calc(var(--card-height) / 6));
-    background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
-    opacity: 1;
-    transition: opacity .5s;
-    animation: spin 2.5s linear infinite;
-}
-
-@keyframes spin {
-    0% {
-        --rotate: 0deg;
-    }
-
-    100% {
-        --rotate: 360deg;
-    }
-} */

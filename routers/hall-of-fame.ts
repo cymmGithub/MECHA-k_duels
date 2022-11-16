@@ -1,6 +1,6 @@
 import { Router } from "express";
 import * as path from "path";
-import { MechRecord } from "../records/mech.record";
+import { PilotRecord } from "../records/pilot.record";
 
 
 export const hallOfFameRouter = Router();
@@ -17,7 +17,7 @@ hallOfFameRouter
     })
     .get('/top-mechs', async (req, res) => {
 
-        const topMechs = await MechRecord.listTop(10);
+        const topMechs = await PilotRecord.listTop(10);
 
         const data = topMechs.map(mech => {
             return {

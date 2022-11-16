@@ -1,6 +1,6 @@
 import { FieldPacket } from "mysql2";
-import { MechRecord } from "../../records/mech.record";
+import { PilotRecord } from "../../records/pilot.record";
 
 
 
-export type MechRecordResult = [MechRecord[], FieldPacket[]];
+export type PilotRecordResult = [PilotRecord[], FieldPacket[]];

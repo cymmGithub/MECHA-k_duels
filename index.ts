@@ -4,7 +4,7 @@ import * as methodOverride from "method-override";
 import { duelRouter } from "./routers/duel";
 import { hallOfFameRouter } from "./routers/hall-of-fame";
 import { homeRouter } from "./routers/home";
-import { mechRouter } from "./routers/mech";
+import { PilotRouter } from "./routers/pilot";
 
 
 
@@ -22,7 +22,7 @@ app.use(express.static('public'));
 
 
 app.use('/', homeRouter);
-app.use('/mech', mechRouter);
+app.use('/pilot', PilotRouter);
 app.use('/hall-of-fame', hallOfFameRouter)
 app.use('/duel', duelRouter);
 // app.use(handleError);
