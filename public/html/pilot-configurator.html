@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MECHA k-duels</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jomhuria&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<main>
+    <section class="glass">
+            <div class="l-dashboard">
+                <div class="logo">
+                    <img class="logo_img" src="./img/logo.png" alt="">
+
+                </div>
+                <div class="links">
+                    <div class="link">
+                        <a href="/"
+                            style="text-decoration: none;">
+                                <div class="link">
+                                    <img class="icon "src="./img/house.png" alt="">
+                                    <h2>Home</h2>
+                                </div>
+                            </a>
+                        </div>
+                    <div class="link">                        
+                        <a href="/pilot"
+                            style="text-decoration: none;">
+                                <div class="link">
+                                    <img class="icon "src="./img/user.png" alt="">
+                                    <h2>Profile</h2>
+                                </div>
+                            </a>
+                        </div>
+                    <div class="link">                        
+                        <a href="/hall-of-fame"
+                            style="text-decoration: none;">
+                                <div class="link">
+                                    <img class="icon "src="./img/duel-icon.png" alt="">
+                                    <h2>Duel</h2>
+                                </div>
+                            </a>
+                        </div>
+                    <div class="link">                        
+                    <a href="/hall-of-fame"
+                        style="text-decoration: none;">
+                            <div class="link">
+                                <img class="icon "src="./img/ranking.png" alt="">
+                                <h2>Ranking</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="active_mech_card">
+
+                </div>
+            </div>
+                <div class="r-dashboard">
+                    <div class="form_wrapper">
+                        <form action="/pilot" method="post">
+                            <label>
+                                Pilot Name: <input type="text" name="name" minlength="3" maxlength="55" required>
+                            </label> <br>
+
+                            <label>
+                                Strength: <input type="number" name="strength" value="1" min="1" max="10">
+                            </label> <br>
+                            <label>
+                                Defense: <input type="number" name="defense" value="1" min="1" max="10">
+                            </label><br>
+                            <label>
+                                Stamina: <input type="number" name="stamina" value="1" min="1" max="10">
+                            </label><br>
+                            <label>
+                                Agility: <input type="number" name="agility" value="1" min="1" max="10">
+                            </label><br>
+                            <button type="submit">Sign up</button>
+                        </form>
+                    </div>
+                    <div class="mech_container">
+                        <label class="radio-container" data-warrior="aztec">
+                            <input name="nation" type="radio" class="radio-hidden" value="aztec" checked="true">
+                            <img src="../img/Vlad 3.png" class="radio-image radio-image-active">
+                            <span class="hero-name hero-name-active">Barbarossa</span>
+                        </label>
+                        <label class="radio-container" data-warrior="aztec">
+                            <input name="nation" type="radio" class="radio-hidden" value="aztec" checked="true">
+                            <img src="../img/Raleigh 4.png" class="radio-image radio-image-active">
+                            <span class="hero-name hero-name-active">Tortuga</span>
+                        </label>
+                        <label class="radio-container" data-warrior="aztec">
+                            <input name="nation" type="radio" class="radio-hidden" value="aztec" checked="true">
+                            <img src="../img/SCOURER 5.png" class="radio-image radio-image-active">
+                            <span class="hero-name hero-name-active">Scourer</span>
+                        </label>
+                        <label class="radio-container" data-warrior="aztec">
+                            <input name="nation" type="radio" class="radio-hidden" value="aztec" checked="true">
+                            <img src="../img/Nelson 2.png" class="radio-image radio-image-active">
+                            <span class="hero-name hero-name-active">Zheng</span>
+                        </label>
+                        <label class="radio-container" data-warrior="aztec">
+                            <input name="nation" type="radio" class="radio-hidden" value="aztec" checked="true">
+                            <img src="../img/Nelson 1.png" class="radio-image radio-image-active">
+                            <span class="hero-name hero-name-active">Zheng</span>
+                        </label>
+                        <label class="radio-container" data-warrior="aztec">
+                            <input name="nation" type="radio" class="radio-hidden" value="aztec" checked="true">
+                            <img src="../img/Tortuga 2.png" class="radio-image radio-image-active">
+                            <span class="hero-name hero-name-active">Zheng</span>
+                        </label>
+                                                <label class="radio-container" data-warrior="aztec">
+                            <input name="nation" type="radio" class="radio-hidden" value="aztec" checked="true">
+                            <img src="../img/Vlad 2.png" class="radio-image radio-image-active">
+                            <span class="hero-name hero-name-active">Zheng</span>
+                        </label>
+                        <label class="radio-container" data-warrior="aztec">
+                            <input name="nation" type="radio" class="radio-hidden" value="aztec" checked="true">
+                            <img src="../img/Tortuga 3.png" class="radio-image radio-image-active">
+                            <span class="hero-name hero-name-active">Barbarossa</span>
+                        </label>
+                        <label class="radio-container" data-warrior="aztec">
+                            <input name="nation" type="radio" class="radio-hidden" value="aztec" checked="true">
+                            <img src="../img/Atlas 3.png" class="radio-image radio-image-active">
+                            <span class="hero-name hero-name-active">Barbarossa</span>
+                        </label>
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+    </section>
+</main>
+<div class="circle1"></div>
+<div class="circle2"></div>
+
+
+
+</body>
+
+</html>

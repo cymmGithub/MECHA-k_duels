@@ -10,10 +10,22 @@ export const PilotRouter = Router();
 PilotRouter
 
     .get('/', async (req, res) => {
-        res.sendFile('test.html', {
+        res.sendFile('pilot-configurator.html', {
             root: path.join(__dirname, '../public/html')
         })
     })
-    .post('/', (req, res) => {
+    .post('/', async (req, res) => {
         res.send('Dodwanie wojownika')
+
+
+        const newPilot = new PilotRecord({
+            ...req.body,
+            strength: Number(req.body.strength),
+            defense: Number(req.body.defense),
+            stamina: Number(req.body.stamina),
+            agility: Number(req.body.agility),
+
+        });
+        await newPilot.insert()
+
     })

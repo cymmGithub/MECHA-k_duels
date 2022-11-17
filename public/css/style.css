@@ -78,9 +78,27 @@ main {
 
     flex-direction: column;
     flex: 3;
-    margin: 5rem;
 
 }
+
+.form_wrapper {
+
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #f6f5f6;
+    margin: 5rem;
+    font-size: 1rem;
+
+
+}
+
+input {
+    font-size: 1.5rem;
+}
+
+
 
 .home_img_container {
     display: inline-block;
@@ -98,8 +116,8 @@ main {
     background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
     font-size: 2rem;
     border-radius: 1rem;
-    padding: 2.3rem;
-    margin: 0;
+    padding: 2.8rem;
+    margin: 4rem;
     box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.302);
     opacity: 0.8;
 
@@ -127,7 +145,7 @@ main {
     padding: 0.5rem 1rem;
     align-items: center;
     color: white;
-    opacity: 0.8;
+    opacity: 1;
 
 }
 
@@ -140,6 +158,8 @@ main {
     text-align: center;
     justify-content: center;
 }
+
+
 
 a {
     color: aqua;
@@ -207,4 +227,18 @@ li {
     border: 1px solid #0077b6;
     transform: translateY(-0.25em);
     cursor: pointer;
+}
+
+/* MECH IMAGES */
+.mech_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    flex-direction: row;
+    margin: 1rem;
+}
+
+.radio-image {
+    height: 7rem;
+    width: auto;
 }
