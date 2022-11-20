@@ -10,6 +10,7 @@ export class PilotRecord {
 
     public id?: string;
     public readonly name: string;
+    public readonly mechName: string;
     public strength: number;
     public defense: number;
     public stamina: number;
@@ -18,7 +19,7 @@ export class PilotRecord {
 
     constructor(obj: Omit<PilotRecord, 'insert' | 'update'>) {
 
-        const { id, name, strength, defense, stamina, agility, wins } = obj;
+        const { id, name, strength, defense, stamina, agility, wins, mechName } = obj;
         this.id = id ?? uuid();
         this.wins = wins ?? 0;
         this.name = name;
@@ -26,6 +27,7 @@ export class PilotRecord {
         this.defense = defense;
         this.stamina = stamina;
         this.agility = agility;
+        this.mechName = mechName;
         this.validate();
 
     }
@@ -48,7 +50,7 @@ export class PilotRecord {
         }
     }
     async insert(): Promise<string> {
-        await pool.execute('INSERT INTO `pilots` VALUES (:id, :name, :strength, :defense, :stamina, :agility, :wins)', {
+        await pool.execute('INSERT INTO `pilots` VALUES (:id, :name, :strength, :defense, :stamina, :agility, :wins, :mechName)', {
             id: this.id,
             name: this.name,
             strength: this.strength,
@@ -56,6 +58,7 @@ export class PilotRecord {
             stamina: this.stamina,
             agility: this.agility,
             wins: this.wins,
+            mechName: this.mechName,
         });
 
         return this.id;
@@ -88,6 +91,14 @@ export class PilotRecord {
         }) as PilotRecordResult;
 
         return result.map(obj => new PilotRecord(obj));
+    }
+    static async isNameTaken(name: string): Promise<boolean> {
+        const [result] = await pool.execute('SELECT * FROM `pilots` WHERE `name` = :name', {
+            name,
+        }) as PilotRecordResult;
+
+
+        return result.length > 0;
     }
 }
 

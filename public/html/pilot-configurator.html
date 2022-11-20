@@ -18,7 +18,7 @@
     <section class="glass">
             <div class="l-dashboard">
                 <div class="logo">
-                    <img class="logo_img" src="./img/logo.png" alt="">
+                    <img class="logo_img" src="./img/ui/logo.png" alt="">
 
                 </div>
                 <div class="links">
@@ -26,7 +26,7 @@
                         <a href="/"
                             style="text-decoration: none;">
                                 <div class="link">
-                                    <img class="icon "src="./img/house.png" alt="">
+                                    <img class="icon "src="./img/ui/house.png" alt="">
                                     <h2>Home</h2>
                                 </div>
                             </a>
@@ -35,7 +35,7 @@
                         <a href="/pilot"
                             style="text-decoration: none;">
                                 <div class="link">
-                                    <img class="icon "src="./img/user.png" alt="">
+                                    <img class="icon "src="./img/ui/user.png" alt="">
                                     <h2>Profile</h2>
                                 </div>
                             </a>
@@ -44,7 +44,7 @@
                         <a href="/hall-of-fame"
                             style="text-decoration: none;">
                                 <div class="link">
-                                    <img class="icon "src="./img/duel-icon.png" alt="">
+                                    <img class="icon "src="./img/ui/duel-icon.png" alt="">
                                     <h2>Duel</h2>
                                 </div>
                             </a>
@@ -53,7 +53,7 @@
                     <a href="/hall-of-fame"
                         style="text-decoration: none;">
                             <div class="link">
-                                <img class="icon "src="./img/ranking.png" alt="">
+                                <img class="icon "src="./img/ui/ranking.png" alt="">
                                 <h2>Ranking</h2>
                             </div>
                         </a>
@@ -64,8 +64,8 @@
                 </div>
             </div>
                 <div class="r-dashboard">
-                    <div class="form_wrapper">
-                        <form action="/pilot" method="post">
+                    <div class="r-dashboard-up">
+                        <div class="form_wrapper">
                             <label>
                                 Pilot Name: <input type="text" name="name" minlength="3" maxlength="55" required>
                             </label> <br>
@@ -82,15 +82,49 @@
                             <label>
                                 Agility: <input type="number" name="agility" value="1" min="1" max="10">
                             </label><br>
-                            <button type="submit">Sign up</button>
                     </div>
+                    <div class="r-dashboard-up-r">
+                        <div class="config_desc">
+                            asdasd
+                        </div>
+                        <button class="sign_btn" type="submit">Sign up</button>
+
+                    </div>
+                    </div>
+
                     <div class="mech_container">
-                        <label class="radio-container" data-warrior="aztec">
+                        <label class="radio-container" data-warrior="ronin">
 
-                            <input name="name" type="radio" class="radio-hidden" value="ronin" checked="true">
-                                <img src="../img/Vlad 2.png" class="radio-image radio-image-active">
+                            <input name="mechName" type="radio"  value="ronin" >
+                                <img src="../img/mechs/Ronin.png" class="radio-image">
                                 <div class="name_stats">
-                                <span class="hero-name hero-name-active">Ronin</span>
+                                <span class="hero-name hero">Ronin</span>
+                                    <span class="strength">STR +2</span>
+                                    <span class="stamina">STR +2</span>
+                                    <span class="defense">STR +2</span>
+                                    <span class="agility">STR +2</span>
+
+                                </div>
+                        </label>
+                        <label class="radio-container" data-warrior="atlas">
+
+                            <input name="mechName" type="radio" value="atlas" >
+                                <img src="../img/mechs/Atlas.png" class="radio-image">
+                                <div class="name_stats">
+                                <span class="hero-name">Atlas</span>
+                                    <span>STR +2</span>
+                                    <span>STA +1</span>
+                                    <span>DEF +1</span>
+                                    <span>AGI +2</span>
+
+                                </div>
+                        </label>
+                        <label class="radio-container" data-warrior="barbarossa">
+
+                            <input name="mechName" type="radio"  value="barbarossa"  >
+                                <img src="../img/mechs/Barbarossa.png" class="radio-image">
+                                <div class="name_stats">
+                                <span class="hero-name">Barbarossa</span>
                                     <span>STR +2</span>
                                     <span>STR +2</span>
                                     <span>STR +2</span>
@@ -98,114 +132,10 @@
 
                                 </div>
                         </label>
-                        <label class="radio-container" data-warrior="aztec">
 
-                            <input name="name" type="radio" class="radio-hidden" value="ronin" checked="true">
-                                <img src="../img/Vlad 2.png" class="radio-image radio-image-active">
-                                <div class="name_stats">
-                                <span class="hero-name hero-name-active">Ronin</span>
-                                    <span>STR +2</span>
-                                    <span>STR +2</span>
-                                    <span>STR +2</span>
-                                    <span>STR +2</span>
-
-                                </div>
-                        </label>
-                        <label class="radio-container" data-warrior="aztec">
-
-                            <input name="name" type="radio" class="radio-hidden" value="ronin" checked="true">
-                                <img src="../img/Vlad 2.png" class="radio-image radio-image-active">
-                                <div class="name_stats">
-                                <span class="hero-name hero-name-active">Ronin</span>
-                                    <span>STR +2</span>
-                                    <span>STR +2</span>
-                                    <span>STR +2</span>
-                                    <span>STR +2</span>
-
-                                </div>
-                        </label>
-                        <label class="radio-container" data-warrior="aztec">
-
-                            <input name="name" type="radio" class="radio-hidden" value="ronin" checked="true">
-                                <img src="../img/Vlad 2.png" class="radio-image radio-image-active">
-                                <div class="name_stats">
-                                <span class="hero-name hero-name-active">Ronin</span>
-                                    <span>STR +2</span>
-                                    <span>STR +2</span>
-                                    <span>STR +2</span>
-                                    <span>STR +2</span>
-
-                                </div>
-                        </label>
-                        <label class="radio-container" data-warrior="aztec">
-
-                            <input name="name" type="radio" class="radio-hidden" value="ronin" checked="true">
-                                <img src="../img/Vlad 2.png" class="radio-image radio-image-active">
-                                <div class="name_stats">
-                                <span class="hero-name hero-name-active">Ronin</span>
-                                    <span>STR +2</span>
-                                    <span>STR +2</span>
-                                    <span>STR +2</span>
-                                    <span>STR +2</span>
-
-                                </div>
-                        </label>
-                        <label class="radio-container" data-warrior="aztec">
-
-                            <input name="name" type="radio" class="radio-hidden" value="ronin" checked="true">
-                                <img src="../img/Vlad 2.png" class="radio-image radio-image-active">
-                                <div class="name_stats">
-                                <span class="hero-name hero-name-active">Ronin</span>
-                                    <span>STR +2</span>
-                                    <span>STR +2</span>
-                                    <span>STR +2</span>
-                                    <span>STR +2</span>
-
-                                </div>
-                        </label>
-                            <label class="radio-container" data-warrior="aztec">
-
-                                <input name="name" type="radio" class="radio-hidden" value="ronin" checked="true">
-                                    <img src="../img/Vlad 2.png" class="radio-image radio-image-active">
-                                    <div class="name_stats">
-                                    <span class="hero-name hero-name-active">Ronin</span>
-                                        <span>STR +2</span>
-                                        <span>STR +2</span>
-                                        <span>STR +2</span>
-                                        <span>STR +2</span>
-    
-                                    </div>
-                            </label>
-                            <label class="radio-container" data-warrior="aztec">
-
-                                <input name="name" type="radio" class="radio-hidden" value="ronin" checked="true">
-                                    <img src="../img/Vlad 2.png" class="radio-image radio-image-active">
-                                    <div class="name_stats">
-                                    <span class="hero-name hero-name-active">Ronin</span>
-                                        <span>STR +2</span>
-                                        <span>STR +2</span>
-                                        <span>STR +2</span>
-                                        <span>STR +2</span>
-    
-                                    </div>
-                            </label>
-                            <label class="radio-container" data-warrior="aztec">
-
-                                <input name="name" type="radio" class="radio-hidden" value="ronin" checked="true">
-                                    <img src="../img/Vlad 2.png" class="radio-image radio-image-active">
-                                    <div class="name_stats">
-                                    <span class="hero-name hero-name-active">Ronin</span>
-                                        <span>STR +2</span>
-                                        <span>STR +2</span>
-                                        <span>STR +2</span>
-                                        <span>STR +2</span>
-    
-                                    </div>
-                            </label>
 
 
                     </div>
-                </form>
 
 
 
@@ -216,7 +146,7 @@
 <div class="circle1"></div>
 <div class="circle2"></div>
 
-
+<script type="module" src="../js/pilot-configurator.js"></script>
 
 </body>
 

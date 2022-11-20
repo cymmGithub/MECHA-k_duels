@@ -9,7 +9,7 @@
 
 main {
     min-height: 100vh;
-    background-image: url('../img/Background_00096.jpg');
+    background-image: url('../img/ui/Background_00096.jpg');
     display: flex;
     align-items: center;
     justify-content: center;
@@ -81,14 +81,18 @@ main {
 
 }
 
+.r-dashboard-up {
+    display: flex;
+}
+
 .form_wrapper {
 
-    height: 5rem;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     color: #f6f5f6;
-    margin: 5rem;
+    margin: 1rem;
     font-size: 1rem;
 
 
@@ -195,9 +199,14 @@ li {
     justify-content: space-evenly;
 }
 
+.colored_font {
+    color: #0077b6;
+}
+
 /********************** PLAY BUTTON ********************/
 
-.play_btn {
+.play_btn,
+.sub_btn {
     position: absolute;
     top: 13rem;
     left: 38rem;
@@ -218,7 +227,10 @@ li {
 
 .play_btn:focus,
 .play_btn:hover,
-.play_btn:active {
+.play_btn:active,
+.sub_btn:focus,
+.sub_btn:hover,
+.sub_btn:active {
     transition: 1s;
     border: none;
     text-transform: uppercase;
@@ -229,7 +241,7 @@ li {
     cursor: pointer;
 }
 
-/* MECH IMAGES */
+/************************ MECH IMAGES **********************/
 .mech_container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -261,6 +273,7 @@ input[type="radio"] {
 
 .radio-container {
     display: flex;
+    border-radius: 20px;
 }
 
 .name_stats {
@@ -270,4 +283,8 @@ input[type="radio"] {
     justify-content: space-evenly;
     margin: 0.5rem;
     font-weight: 100;
+}
+
+.radio-container.active {
+    border: solid 1px black;
 }

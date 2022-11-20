@@ -15,7 +15,7 @@ PilotRouter
         })
     })
     .post('/', async (req, res) => {
-        res.send('Dodwanie wojownika')
+
 
 
         const newPilot = new PilotRecord({
@@ -27,5 +27,10 @@ PilotRouter
 
         });
         await newPilot.insert()
+        res.sendFile('pilot-added.html', {
+            root: path.join(__dirname, '../public/html')
+        })
+
+
 
     })

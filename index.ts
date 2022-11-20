@@ -5,6 +5,7 @@ import { duelRouter } from "./routers/duel";
 import { hallOfFameRouter } from "./routers/hall-of-fame";
 import { homeRouter } from "./routers/home";
 import { PilotRouter } from "./routers/pilot";
+import { handleError } from "./utils/error";
 
 
 
@@ -27,6 +28,7 @@ app.use('/hall-of-fame', hallOfFameRouter)
 app.use('/duel', duelRouter);
 // app.use(handleError);
 
+app.use(handleError);
 
 
 app.listen(3000, 'localhost', () => {
