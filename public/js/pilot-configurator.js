@@ -64,6 +64,7 @@ signBtn.addEventListener('click', async ()=> {
         setTimeout(()=> {
             window.location.href = '/';
         }, 3000);
+        
         return;
     }
     
