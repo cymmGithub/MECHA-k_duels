@@ -75,7 +75,7 @@ main {
 
 .r-dashboard {
     display: flex;
-
+    width: inherit;
     flex-direction: column;
     flex: 3;
 
@@ -247,23 +247,22 @@ li {
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
     flex-direction: row;
-    margin: 1rem;
+    margin: 2rem;
+
 }
 
 .radio-image {
-    height: 6rem;
+    height: 5rem;
     width: auto;
-    cursor: pointer;
 }
 
 input[type="radio"] {
     margin: 1rem;
     font: inherit;
-    width: 1.15em;
-    height: 1.15em;
+    width: 0.8rem;
+    height: auto;
     border: 0.15em solid currentColor;
     border-radius: 50%;
-    cursor: pointer;
 }
 
 .hero-name {
@@ -274,6 +273,7 @@ input[type="radio"] {
 .radio-container {
     display: flex;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .name_stats {
@@ -290,7 +290,7 @@ input[type="radio"] {
 }
 
 
-/* ALERT */
+/************ ALERT ************/
 
 .alert {
     position: absolute;

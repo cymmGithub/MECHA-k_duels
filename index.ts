@@ -27,9 +27,8 @@ app.use('/', homeRouter);
 app.use('/pilot', PilotRouter);
 app.use('/hall-of-fame', hallOfFameRouter)
 app.use('/duel', duelRouter);
-// app.use(handleError);
-
 app.use(handleError);
+
 
 
 app.listen(3000, 'localhost', () => {
