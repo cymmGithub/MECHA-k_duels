@@ -9,7 +9,7 @@ import { FieldPacket } from "mysql2";
 export class PilotRecord {
 
     public id?: string;
-    public readonly name: string;
+    public readonly pilotName: string;
     public readonly mechName: string;
     public strength: number;
     public defense: number;
@@ -19,10 +19,10 @@ export class PilotRecord {
 
     constructor(obj: Omit<PilotRecord, 'insert' | 'update'>) {
 
-        const { id, name, strength, defense, stamina, agility, wins, mechName } = obj;
+        const { id, pilotName, strength, defense, stamina, agility, wins, mechName } = obj;
         this.id = id ?? uuid();
         this.wins = wins ?? 0;
-        this.name = name;
+        this.pilotName = pilotName;
         this.strength = strength;
         this.defense = defense;
         this.stamina = stamina;
@@ -41,18 +41,18 @@ export class PilotRecord {
                 throw new ValidationError('You have to put at least 1 point in every stat')
             }
         }
-        if (sum !== 10) {
-            throw new ValidationError(`Sum of your abilities has to be 10, actually it is ${sum}`);
+        if (sum !== 18) {
+            throw new ValidationError(`Sum of your abilities has to be 18, actually it is ${sum}`);
 
         }
-        if (Number(this.name) || this.name.trim().length < 3 || this.name.trim().length > 55 || !this.name) {
-            throw new ValidationError(`Your name have to be between 3 and 55 chars, actually it is ${this.name.length}`);
+        if (Number(this.pilotName) || this.pilotName.trim().length < 3 || this.pilotName.trim().length > 55 || !this.pilotName) {
+            throw new ValidationError(`Your pilotName have to be between 3 and 55 chars, actually it is ${this.pilotName.length}`);
         }
     }
     async insert(): Promise<string> {
-        await pool.execute('INSERT INTO `pilots` VALUES (:id, :name, :strength, :defense, :stamina, :agility, :wins, :mechName)', {
+        await pool.execute('INSERT INTO `pilots` VALUES (:id, :pilotName, :strength, :defense, :stamina, :agility, :wins, :mechName)', {
             id: this.id,
-            name: this.name,
+            pilotName: this.pilotName,
             strength: this.strength,
             defense: this.defense,
             stamina: this.stamina,
@@ -80,7 +80,7 @@ export class PilotRecord {
 
     }
     static async listAll(): Promise<PilotRecord[]> {
-        const [result] = await pool.execute('SELECT * FROM `pilots` ORDER BY `name`') as [PilotRecord[], FieldPacket[]];
+        const [result] = await pool.execute('SELECT * FROM `pilots` ORDER BY `pilotName`') as [PilotRecord[], FieldPacket[]];
 
         return result.map(obj => new PilotRecord(obj));
 
@@ -92,9 +92,9 @@ export class PilotRecord {
 
         return result.map(obj => new PilotRecord(obj));
     }
-    static async isNameTaken(name: string): Promise<boolean> {
-        const [result] = await pool.execute('SELECT * FROM `pilots` WHERE `name` = :name', {
-            name,
+    static async isNameTaken(pilotName: string): Promise<boolean> {
+        const [result] = await pool.execute('SELECT * FROM `pilots` WHERE `pilotName` = :pilotName', {
+            pilotName,
         }) as PilotRecordResult;
 
 

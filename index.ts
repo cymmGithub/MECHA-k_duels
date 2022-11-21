@@ -15,6 +15,7 @@ import { handleError } from "./utils/error";
 
 const app = express();
 
+app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({
     extended: true,

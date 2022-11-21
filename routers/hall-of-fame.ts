@@ -21,7 +21,7 @@ hallOfFameRouter
 
         const data = topMechs.map(mech => {
             return {
-                name: mech.name,
+                name: mech.pilotName,
                 wins: mech.wins
             }
         })
