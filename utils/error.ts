@@ -1,5 +1,4 @@
 import { NextFunction, Request, Response } from "express";
-import * as path from "path";
 
 export class ValidationError extends Error { }
 
@@ -18,4 +17,6 @@ export function handleError(error: any, req: Request, res: Response, next: NextF
             .json(error.message)
         console.error(error)
     }
+    res.status(500);
+    res.json('Sorry try again later')
 }

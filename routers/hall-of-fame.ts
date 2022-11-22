@@ -17,12 +17,14 @@ hallOfFameRouter
     })
     .get('/top-mechs', async (req, res) => {
 
-        const topMechs = await PilotRecord.listTop(10);
+        const topPilots = await PilotRecord.listTop(8);
 
-        const data = topMechs.map(mech => {
+        const data = topPilots.map(pilot => {
             return {
-                name: mech.pilotName,
-                wins: mech.wins
+                name: pilot.pilotName,
+                wins: pilot.wins,
+                mechName: pilot.mechName,
+
             }
         })
 

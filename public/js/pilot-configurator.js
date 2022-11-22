@@ -1,4 +1,4 @@
-import { alertMsgNegative, alertMsgPositive } from "./utils/error.js";
+import { alertMsgNegative, alertMsgPositive } from "./utils/alert.js";
 
 const signBtn = document.querySelector('.sign_btn');
 const mechs = document.querySelectorAll('.radio-container')
@@ -64,7 +64,7 @@ signBtn.addEventListener('click', async ()=> {
         setTimeout(()=> {
             window.location.href = '/';
         }, 3000);
-        
+
         return;
     }
     
