@@ -19,35 +19,36 @@ function createRanking(data) {
 
         switch(el.mechName) {
                 case 'Ronin':
-                    li.style.background = 'linear-gradient(to right, #e1e1e1,#d3b7ff)'
+                    li.style.background = 'url("../img/ui/Ronin_ranking.png") ,linear-gradient(to right, #e1e1e1,#d3b7ff)';
                     break;
                 case 'Blackbeard':
-                    li.style.background = 'linear-gradient(to right, #557d74,#2e2b35)'
+                    li.style.background = 'url("../img/ui/Blackbeard_ranking.png") ,linear-gradient(to right, #557d74,#2e2b35)';
                     break;
                 case 'Nelson':
-                    li.style.background = 'linear-gradient(to right, #1a132a,#a760ff)'
+                    li.style.background = 'url("../img/ui/Nelson_ranking.png") ,linear-gradient(to left, #1a132a,#a760ff)';
                     break;   
                 case 'Scourer':
-                    li.style.background = 'linear-gradient(to right, #0065b8,#d4a21b)'
+                    li.style.background = 'url("../img/ui/Scourer_ranking.png") ,linear-gradient(to right, #0065b8,#d4a21b)';
                     break;
                 case 'Tortuga':
-                    li.style.background = 'linear-gradient(to right, #12100e,#d4b000)'
+                    li.style.background = 'url("../img/ui/Tortuga_ranking.png") ,linear-gradient(to left, #12100e,#d4b000)';
                     break; 
                 case 'Barbarossa':
-                    li.style.background = 'linear-gradient(to right, #143c57,#ff3230)'
+                    li.style.background = 'url("../img/ui/Barbarossa_ranking.png"), linear-gradient(to left, #143c57,#ff3230)'; 
+
                     break;
                 case 'Atlas':
-                    li.style.background = 'linear-gradient(to right, #311e13,#f46f00)'
+                    li.style.background = 'url("../img/ui/Atlas_ranking.png") ,linear-gradient(to left, #311e13,#f46f00)';
                     break;
                 case 'Zheng':
-                    li.style.background = 'linear-gradient(to right, #557d74,#2e2b35)'
+                    li.style.background = 'url("../img/ui/Zheng_ranking.png") ,linear-gradient(to left, #557d74,#2e2b35)';
                     break; 
                 case 'Raleigh':
-                    li.style.background = 'linear-gradient(to right, #b1b0ab,#0781d2)';
+                    li.style.background = 'url("../img/ui/Raleigh_ranking.png") ,linear-gradient(to right, #b1b0ab,#0781d2)';
                     break;                           
         }
 
-        mark.textContent = `${el.name} - ${el.mechName}`;
+        mark.textContent = `${el.name}`;
         small.textContent = `${el.wins} wins`
         li.appendChild(mark);
         li.appendChild(small);

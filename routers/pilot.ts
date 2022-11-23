@@ -17,7 +17,6 @@ PilotRouter
             })
     })
     .post('/', async (req, res) => {
-        console.log(req.body.strength);
 
 
         const newPilot = new PilotRecord({

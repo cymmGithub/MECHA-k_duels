@@ -41,8 +41,8 @@ export class PilotRecord {
                 throw new ValidationError('You have to put at least 1 point in every stat')
             }
         }
-        if (Number(this.pilotName) || this.pilotName.trim().length < 3 || this.pilotName.trim().length > 55 || !this.pilotName) {
-            throw new ValidationError(`Your pilotName have to be between 3 and 55 chars, actually it is ${this.pilotName.length}`);
+        if (Number(this.pilotName) || this.pilotName.trim().length < 3 || this.pilotName.trim().length > 20 || !this.pilotName) {
+            throw new ValidationError(`Your pilotName have to be between 3 and 20 chars, actually it is ${this.pilotName.length}`);
         }
         if (sum !== 18) {
             throw new ValidationError(`Sum of your abilities has to be 18, actually it is ${sum}`);

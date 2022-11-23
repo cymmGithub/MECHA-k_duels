@@ -64,22 +64,22 @@
                 <div class="r-dashboard">
                     <div class="r-dashboard-up">
                         <div class="form_wrapper">
-                            <label>
+                            <label class="label_form">
                                 Pilot Name: <input type="text" name="name" minlength="3" maxlength="55" required>
-                            </label> <br>
+                            </label> 
 
-                            <label>
+                            <label class="label_form">
                                 Strength: <input type="number" name="strength" value="1" min="1" max="10">
-                            </label> <br>
-                            <label>
+                            </label> 
+                            <label class="label_form">
                                 Defense: <input type="number" name="defense" value="1" min="1" max="10">
-                            </label><br>
-                            <label>
+                            </label>
+                            <label class="label_form">
                                 Stamina: <input type="number" name="stamina" value="1" min="1" max="10">
-                            </label><br>
-                            <label>
+                            </label>
+                            <label class="label_form">
                                 Agility: <input type="number" name="agility" value="1" min="1" max="10">
-                            </label><br>
+                            </label>
                     </div>
                     <div class="r-dashboard-up-r">
 
@@ -89,19 +89,20 @@
                     </div>
 
                     <div class="mech_container">
-                        <label class="radio-container active" data-warrior="ronin">
+                        <label class="radio-container active" data-warrior="blackbeard">
 
-                            <input name="mechName" type="radio"  value="ronin" checked>
-                                <img src="../img/mechs/Ronin.png" class="radio-image">
+                            <input name="mechName" type="radio"  value="blackbeard" checked >
+                                <img src="../img/mechs/Blackbeard.png" class="radio-image">
                                 <div class="name_stats">
-                                <span class="hero-name hero">Ronin</span>
-                                    <span class="strength">STR +2</span>
-                                    <span class="stamina">STR +2</span>
-                                    <span class="defense">STR +2</span>
-                                    <span class="agility">STR +2</span>
+                                <span class="hero-name">Blackbeard</span>
+                                    <span>STR +2</span>
+                                    <span>STR +2</span>
+                                    <span>STR +2</span>
+                                    <span>STR +2</span>
 
                                 </div>
                         </label>
+
                         <label class="radio-container" data-warrior="atlas">
 
                             <input name="mechName" type="radio" value="atlas" >
@@ -141,38 +142,26 @@
 
                                 </div>
                         </label>
-                        <label class="radio-container" data-warrior="blackbeard">
+                        <label class="radio-container " data-warrior="ronin">
 
-                            <input name="mechName" type="radio"  value="blackbeard"  >
-                                <img src="../img/mechs/Blackbeard.png" class="radio-image">
+                            <input name="mechName" type="radio"  value="ronin" >
+                                <img src="../img/mechs/Ronin.png" class="radio-image">
                                 <div class="name_stats">
-                                <span class="hero-name">Blackbeard</span>
-                                    <span>STR +2</span>
-                                    <span>STR +2</span>
-                                    <span>STR +2</span>
-                                    <span>STR +2</span>
+                                <span class="hero-name hero">Ronin</span>
+                                    <span class="strength">STR +2</span>
+                                    <span class="stamina">STR +2</span>
+                                    <span class="defense">STR +2</span>
+                                    <span class="agility">STR +2</span>
 
                                 </div>
                         </label>
+
                         <label class="radio-container" data-warrior="raleigh">
 
                             <input name="mechName" type="radio"  value="raleigh"  >
                                 <img src="../img/mechs/Raleigh.png" class="radio-image">
                                 <div class="name_stats">
                                 <span class="hero-name">Raleigh</span>
-                                    <span>STR +2</span>
-                                    <span>STR +2</span>
-                                    <span>STR +2</span>
-                                    <span>STR +2</span>
-
-                                </div>
-                        </label>
-                        <label class="radio-container" data-warrior="scourer">
-
-                            <input name="mechName" type="radio"  value="scourer"  >
-                                <img src="../img/mechs/Scourer.png" class="radio-image">
-                                <div class="name_stats">
-                                <span class="hero-name">Scourer</span>
                                     <span>STR +2</span>
                                     <span>STR +2</span>
                                     <span>STR +2</span>
@@ -193,6 +182,20 @@
 
                                 </div>
                         </label>
+                        <label class="radio-container" data-warrior="scourer">
+
+                            <input name="mechName" type="radio"  value="scourer"  >
+                                <img src="../img/mechs/Scourer.png" class="radio-image">
+                                <div class="name_stats">
+                                <span class="hero-name">Scourer</span>
+                                    <span>STR +2</span>
+                                    <span>STR +2</span>
+                                    <span>STR +2</span>
+                                    <span>STR +2</span>
+
+                                </div>
+                        </label>
+
                         <label class="radio-container" data-warrior="zheng">
 
                             <input name="mechName" type="radio"  value="zheng"  >
