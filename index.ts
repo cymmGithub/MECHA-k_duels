@@ -1,6 +1,7 @@
 import * as express from "express";
 import 'express-async-errors';
 import * as methodOverride from "method-override";
+import * as cookieParser from 'cookie-parser';
 import { duelRouter } from "./routers/duel";
 import { hallOfFameRouter } from "./routers/hall-of-fame";
 import { homeRouter } from "./routers/home";
@@ -21,6 +22,7 @@ app.use(express.urlencoded({
     extended: true,
 }));
 app.use(express.static('public'));
+app.use(cookieParser());
 
 
 app.use('/', homeRouter);

@@ -16,6 +16,7 @@ mechs.forEach((mech, i ) => {
                 mechs[index].classList.remove('active');
             }
         })
+            
     })
 
 })
@@ -62,8 +63,8 @@ signBtn.addEventListener('click', async ()=> {
     if(res.status === 200) {
         alertMsgPositive(responseTxt);
         setTimeout(()=> {
-            window.location.href = '/';
-        }, 3000);
+            window.location.href = '/duel';
+        }, 2500);
 
         return;
     }

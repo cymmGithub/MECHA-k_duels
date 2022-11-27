@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Jomhuria';
+    font-family: 'Jomhuria', 'sans-serif';
 
 }
 
@@ -16,6 +16,13 @@ main {
 
 }
 
+.colored_text {
+    background: #121FCF;
+    background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 .glass {
     display: flex;
@@ -49,6 +56,7 @@ main {
     bottom: 5%;
     left: 5%;
 }
+
 
 .icon {
     height: 2rem;
@@ -167,7 +175,12 @@ input[type=number] {
 
 }
 
-.link {
+.duel_link {
+    cursor: pointer;
+}
+
+.link,
+.duel_link {
     display: flex;
     margin: 0.5rem 0rem;
     padding: 0.5rem 1rem;
@@ -236,7 +249,7 @@ li {
     left: 40rem;
     height: 2rem;
     width: 150px;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 20px;
     text-transform: uppercase;
     padding-top: 5px;
@@ -247,6 +260,31 @@ li {
     border-radius: 10px;
     opacity: 0.8;
 
+}
+
+.random_btn,
+.fight_btn {
+
+    height: 2rem;
+    width: 150px;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding-top: 5px;
+    margin-bottom: 6rem;
+    color: #fcfcfc;
+    background: #0077b6;
+    border: 1px solid #f6f5f6;
+    border-radius: 10px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.random_btn:hover,
+.fight_btn:hover {
+    transition: 1s;
+    background: #ffd60a;
+    color: #0077b6;
 }
 
 .play_btn:focus,
@@ -272,6 +310,7 @@ li {
     justify-content: center;
     flex-direction: row;
     margin: 2rem;
+    opacity: 0.8;
 
 }
 
@@ -301,6 +340,7 @@ input[type="radio"] {
     align-items: center;
     border-radius: 20px;
     cursor: pointer;
+
 }
 
 .name_stats {
@@ -315,7 +355,12 @@ input[type="radio"] {
 }
 
 .radio-container.active {
-    border: solid 1px black;
+    background-color: rgba(89, 170, 252, 1);
+    background-image: linear-gradient(108deg, rgba(89, 170, 252, 1) 0%, rgba(161, 211, 227, 1) 100%);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 
@@ -445,4 +490,70 @@ input[type="radio"] {
     content: counter(number) ".";
     margin-right: 4px;
     color: #f6f5f6;
+}
+
+/**************** ARENA ***************/
+
+.arena {
+
+    width: inherit;
+    height: 300px;
+    background-image: url('../img/background/BG space 5_ 1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 3rem 3rem 1rem 3rem;
+    box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.302);
+    opacity: 1
+}
+
+.player>img {
+    transform: scaleX(-1);
+}
+
+.player,
+.enemy {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 6rem;
+    width: 6rem;
+
+}
+
+.mechs {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    height: 6rem;
+    position: absolute;
+    left: 22rem;
+    bottom: 20rem;
+}
+
+.player>img,
+.enemy>img {
+
+
+    width: auto;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+    opacity: 1;
+
+
+}
+
+.arena_buttons {
+    display: flex;
+    justify-content: space-evenly;
+    height: fit-content;
 }

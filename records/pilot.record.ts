@@ -16,6 +16,7 @@ export class PilotRecord {
     public stamina: number;
     public agility: number;
     public wins?: number;
+    public enemy?: boolean;
 
     constructor(obj: Omit<PilotRecord, 'insert' | 'update'>) {
 

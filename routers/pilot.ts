@@ -16,6 +16,16 @@ PilotRouter
                 root: path.join(__dirname, '../public/html')
             })
     })
+    .get('/random-opponent', async (req, res) => {
+        const mechList = await PilotRecord.listAll();
+        const randomMech = mechList[Math.floor(Math.random() * mechList.length)]
+        randomMech['enemy'] = true;
+
+        console.log(randomMech);
+
+        res.json(randomMech);
+
+    })
     .post('/', async (req, res) => {
 
 
@@ -30,6 +40,7 @@ PilotRouter
         await newPilot.insert();
 
         res
+            .cookie('playerId', newPilot.id)
             .status(200)
             .json('Your Pilot has been succesfully registered for tournament')
 
