@@ -1,6 +1,10 @@
-const ranking = document.querySelector('.ranking_list');
+import { alertMsgNegative } from "./utils/alert.js";
 
-console.log(ranking);
+const ranking = document.querySelector('.ranking_list');
+const duelLink = document.querySelector('.duel_link');
+console.log(duelLink);
+
+
 
 (async() => {
     const res = await fetch('/hall-of-fame/top-mechs');
@@ -60,3 +64,21 @@ function createRanking(data) {
 
     })
 }
+
+
+
+duelLink.addEventListener('click', async ()=>{
+
+    const res = await fetch('/duel')
+    
+
+    if(res.status === 400) {
+        const data = await res.json();
+        alertMsgNegative(data)
+        return;
+    }
+    window.location.href = '/duel';
+
+
+
+})

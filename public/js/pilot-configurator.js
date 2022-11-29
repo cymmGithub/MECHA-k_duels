@@ -1,7 +1,9 @@
 import { alertMsgNegative, alertMsgPositive } from "./utils/alert.js";
 
 const signBtn = document.querySelector('.sign_btn');
-const mechs = document.querySelectorAll('.radio-container')
+const mechs = document.querySelectorAll('.radio-container');
+const duelLink = document.querySelector('.duel_link');
+
 const mechImg = [...document.querySelectorAll('.radio-image')];
 const heroName = [...document.querySelectorAll('.hero-name')];
 const strength = document.querySelector('.strength');
@@ -64,7 +66,7 @@ signBtn.addEventListener('click', async ()=> {
         alertMsgPositive(responseTxt);
         setTimeout(()=> {
             window.location.href = '/duel';
-        }, 2500);
+        }, 2000);
 
         return;
     }
@@ -72,5 +74,21 @@ signBtn.addEventListener('click', async ()=> {
     alertMsgNegative(responseTxt)
 
 
-})
+});
+console.log(duelLink);
 
+duelLink.addEventListener('click', async ()=>{
+    console.log('ok');
+    const res = await fetch('/duel')
+    
+
+    if(res.status === 400) {
+        const data = await res.json();
+        alertMsgNegative(data)
+        return;
+    }
+    window.location.href = '/duel';
+
+
+
+});

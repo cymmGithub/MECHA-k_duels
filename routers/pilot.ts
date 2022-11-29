@@ -21,7 +21,6 @@ PilotRouter
         const randomMech = mechList[Math.floor(Math.random() * mechList.length)]
         randomMech['enemy'] = true;
 
-        console.log(randomMech);
 
         res.json(randomMech);
 

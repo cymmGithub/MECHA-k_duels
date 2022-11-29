@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { rmSync } from "fs";
 import * as path from "path";
+import { Arena } from "../records/arena.record";
 import { PilotRecord } from "../records/pilot.record";
 import { ValidationError } from "../utils/error";
 
@@ -36,6 +36,23 @@ duelRouter
         res.json(player);
 
     })
-    .post('/start', (req, res) => {
-        res.render('duel/fight')
+    .post('/start', async (req, res) => {
+
+        const { playerId, enemyId } = req.body;
+
+        const player1 = await PilotRecord.getOne(playerId);
+        const player2 = await PilotRecord.getOne(enemyId);
+
+        const arena = new Arena(player1, player2);
+        const winner = arena.fight();
+        console.log(arena.log);
+
+        winner.wins++;
+        winner.update(winner.id)
+
+        res
+            .status(200)
+            .json(arena.log);
+
+
     })
