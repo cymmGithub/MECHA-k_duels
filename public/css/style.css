@@ -535,7 +535,7 @@ input[type="radio"] {
     height: 6rem;
     position: absolute;
     left: 22rem;
-    bottom: 20rem;
+    bottom: 19rem;
 }
 
 .player>img,
@@ -567,12 +567,11 @@ input[type="radio"] {
 }
 
 .log_container {
-
     height: 200px;
     overflow: auto;
     background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
     border-radius: 1rem;
-    margin: 1rem;
+    margin: 1rem 2rem 1rem 2rem;
     box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.302);
     opacity: 0.8;
 }

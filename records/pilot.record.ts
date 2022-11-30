@@ -81,12 +81,24 @@ export class PilotRecord {
         return result.length === 0 ? null : new PilotRecord(result[0]);
 
     }
+    static async getRandom(id: string): Promise<PilotRecord> {
+        const [result] = await pool.execute('SELECT * FROM `pilots` WHERE NOT `id` = :id', {
+            id,
+        }) as [PilotRecord[], FieldPacket[]];
+        const mechList = result.map(obj => new PilotRecord(obj));
+
+
+
+        return mechList[Math.floor(Math.random() * mechList.length)];
+
+    }
     static async listAll(): Promise<PilotRecord[]> {
         const [result] = await pool.execute('SELECT * FROM `pilots` ORDER BY `pilotName`') as [PilotRecord[], FieldPacket[]];
 
         return result.map(obj => new PilotRecord(obj));
 
     }
+
     static async listTop(topCount: number): Promise<PilotRecord[]> {
         const [result] = await pool.execute('SELECT * FROM `pilots` ORDER BY `wins` DESC LIMIT :topCount', {
             topCount: topCount.toString(),

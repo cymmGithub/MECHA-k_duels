@@ -17,12 +17,16 @@ PilotRouter
             })
     })
     .get('/random-opponent', async (req, res) => {
-        const mechList = await PilotRecord.listAll();
-        const randomMech = mechList[Math.floor(Math.random() * mechList.length)]
-        randomMech['enemy'] = true;
+        const { playerId } = req.cookies;
+
+        const randomOpponent = await PilotRecord.getRandom(playerId);
+
+        randomOpponent['enemy'] = true;
+
+        res.json(randomOpponent);
 
 
-        res.json(randomMech);
+
 
     })
     .post('/', async (req, res) => {
