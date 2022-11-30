@@ -17,13 +17,19 @@ PilotRouter
             })
     })
     .get('/random-opponent', async (req, res) => {
-        const { playerId } = req.cookies;
+        const { playerId, enemyId } = req.cookies;
+        if (enemyId) {
+            throw new ValidationError('Finish your fight first');
+
+        }
 
         const randomOpponent = await PilotRecord.getRandom(playerId);
 
         randomOpponent['enemy'] = true;
 
-        res.json(randomOpponent);
+        res
+            .cookie('enemyId', randomOpponent.id)
+            .json(randomOpponent);
 
 
 
