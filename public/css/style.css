@@ -149,8 +149,8 @@ input[type=number] {
     position: absolute;
     top: 1rem;
     display: flex;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
     font-size: 2rem;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
     border-radius: 1rem;
     padding: 2.8rem;
     margin: 4rem;
@@ -180,13 +180,27 @@ input[type=number] {
 }
 
 .link,
-.duel_link {
+.duel {
     display: flex;
-    margin: 0.5rem 0rem;
-    padding: 0.5rem 1rem;
+    margin: 0.8rem 0rem;
+    padding: 1rem;
     align-items: center;
     color: white;
     opacity: 1;
+    cursor: pointer;
+
+}
+
+.link,
+.ranking>a {
+    display: flex;
+}
+
+.link:hover,
+.duel_link:hover,
+.h2:hover {
+    border-radius: 20px;
+    background: linear-gradient(to right bottom, rgba(136, 205, 255, 0.36), rgba(98, 98, 98, 0.1));
 
 }
 
@@ -240,7 +254,7 @@ li {
     color: #0077b6;
 }
 
-/********************** PLAY BUTTON ********************/
+/**********************  BUTTONS ********************/
 
 .play_btn,
 .sub_btn {
@@ -262,8 +276,23 @@ li {
 
 }
 
+.disabled_btn {
+    height: 2rem;
+    width: 150px;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding-top: 5px;
+    color: #fcfcfc;
+    background: #0077b6;
+    border: 1px solid #f6f5f6;
+    border-radius: 10px;
+    opacity: 0.2;
+}
+
 .random_btn,
-.fight_btn {
+.fight_btn,
+.again_btn {
 
     height: 2rem;
     width: 150px;
@@ -280,7 +309,8 @@ li {
 }
 
 .random_btn:hover,
-.fight_btn:hover {
+.fight_btn:hover,
+.again_btn:hover {
     transition: 1s;
     background: #ffd60a;
     color: #0077b6;
@@ -354,8 +384,8 @@ input[type="radio"] {
 }
 
 .radio-container.active {
-    background-color: rgba(89, 170, 252, 1);
-    background-image: linear-gradient(108deg, rgba(89, 170, 252, 1) 0%, rgba(161, 211, 227, 1) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
+    opacity: 1;
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
@@ -364,6 +394,10 @@ input[type="radio"] {
 
 
 /************ ALERT ************/
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
 
 .alert {
     position: absolute;
@@ -497,11 +531,6 @@ input[type="radio"] {
 
     width: inherit;
     height: 300px;
-    background-image: url('../img/background/BG space 3.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-
     top: 1rem;
     display: flex;
     justify-content: space-between;
@@ -535,11 +564,36 @@ input[type="radio"] {
     height: 6rem;
     position: absolute;
     left: 22rem;
-    bottom: 19rem;
+    bottom: 20rem;
+}
+
+
+
+.winner-container {
+    height: 14rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
+    border-radius: 20px;
+    width: 12rem;
+    height: 14rem;
+    position: absolute;
+    left: 30rem;
+    bottom: 21rem;
+    padding: 2rem;
+}
+
+.winner-container>p {
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: aliceblue;
+    opacity: 0.8;
 }
 
 .player>img,
-.enemy>img {
+.enemy>img,
+.winner>img {
 
 
     width: auto;
@@ -577,7 +631,8 @@ input[type="radio"] {
 }
 
 .log_container>li {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+
 }
 
 /****************** SCROLL BAR *****************/

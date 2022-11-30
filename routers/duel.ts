@@ -26,10 +26,14 @@ duelRouter
 
     })
     .get('/player', async (req, res) => {
-        const { playerId } = req.cookies as {
+        const { playerId, winnerId } = req.cookies as {
             playerId: string
+            winnerId: string
         }
-
+        if (winnerId) {
+            res.status(400);
+            res.json('Wait a bit...')
+        }
 
         const player = await PilotRecord.getOne(playerId)
         res.status(200)
@@ -37,6 +41,7 @@ duelRouter
 
     })
     .post('/start', async (req, res) => {
+        console.log(req.cookies);
 
         const { playerId, enemyId } = req.body;
 
@@ -51,6 +56,7 @@ duelRouter
         winner.update(winner.id)
 
         res
+            .cookie('winnerId', winner.id)
             .status(200)
             .json({
                 winner,

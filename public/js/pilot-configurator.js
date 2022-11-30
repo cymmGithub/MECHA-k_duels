@@ -2,7 +2,7 @@ import { alertMsgNegative, alertMsgPositive } from "./utils/alert.js";
 
 const signBtn = document.querySelector('.sign_btn');
 const mechs = document.querySelectorAll('.radio-container');
-const duelLink = document.querySelector('.duel_link');
+const duelLink = document.querySelector('.link.duel');
 
 const mechImg = [...document.querySelectorAll('.radio-image')];
 const heroName = [...document.querySelectorAll('.hero-name')];
