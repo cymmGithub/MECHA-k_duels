@@ -497,7 +497,7 @@ input[type="radio"] {
 
     width: inherit;
     height: 300px;
-    background-image: url('../img/background/BG space 5_ 1.png');
+    background-image: url('../img/background/BG space 3.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -555,7 +555,7 @@ input[type="radio"] {
 .enemy>p {
     display: inline-block;
     white-space: nowrap;
-
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     color: aliceblue;
     opacity: 0.8;
 }
@@ -578,7 +578,7 @@ input[type="radio"] {
 }
 
 .log_container>li {
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 /****************** SCROLL BAR *****************/

@@ -36,12 +36,12 @@ export class Arena implements ArenaSkirmish {
 
             if (attacker.strength <= defender.defense) {
 
-                this.log.push(`${defender.pilotName} successfully blocked ${attacker.pilotName} attack`)
+                this.log.push(`${defender.pilotName} BLOCKED ${attacker.pilotName} attack`)
                 defender.defense -= (attacker.strength - (Math.round(defender.agility / 5)));
 
 
                 if (defender.defense <= 0) {
-                    this.log.push(`${attacker.pilotName} succesfuly broke ${defender.pilotName} defense ----- ${defender.pilotName} has no defense left`);
+                    this.log.push(`${attacker.pilotName} succesfully broke ${defender.pilotName} defense ----- ${defender.pilotName} has no defense left`);
                     defender.stamina += defender.defense;
                 }
 
@@ -51,8 +51,8 @@ export class Arena implements ArenaSkirmish {
                 defender.defense -= (attacker.strength - (Math.round(defender.agility / 5)));
 
                 defender.defense <= 0 ?
-                    this.log.push(`${attacker.pilotName} successfuly broke ${defender.pilotName} defense ----- ${defender.pilotName} has no defense left`) :
-                    this.log.push(`${attacker.pilotName} almost broke ${defender.pilotName} defense ----- ${defender.pilotName} got only ${defender.defense} left`);
+                    this.log.push(`${attacker.pilotName} broke ${defender.pilotName} defense ----- ${defender.pilotName} has no defense left`) :
+                    this.log.push(`${attacker.pilotName} almost broke ${defender.pilotName} defense ----- ${defender.pilotName} got only ${defender.defense} DP left`);
 
                 if (!(defender.defense > 0)) {
                     defender.stamina += defender.defense;
