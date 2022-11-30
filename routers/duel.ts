@@ -52,7 +52,10 @@ duelRouter
 
         res
             .status(200)
-            .json(arena.log);
+            .json({
+                winner,
+                log: arena.log
+            });
 
 
     })

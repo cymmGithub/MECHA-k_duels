@@ -3,6 +3,8 @@ import { showPlayers } from "./utils/showPlayers.js";
 
 const randomBtn = document.querySelector('.random_btn');
 const fightBtn = document.querySelector('.fight_btn');
+const logContainer = document.querySelector('.log_container');
+
 
 //Load player
 (async() => {
@@ -27,7 +29,7 @@ randomBtn.addEventListener('click', async (e)=> {
 //Fight
 fightBtn.addEventListener('click', async (e)=> {
     e.preventDefault();
-    const logger = document.querySelector('.log_container');
+    logContainer.textContent = '' ;
     const playerId = document.querySelector('.player');
     const enemyId = document.querySelector('.enemy');
     
@@ -51,6 +53,10 @@ fightBtn.addEventListener('click', async (e)=> {
   
     const {log, winner}  = await res.json();
     
-    logger.textContent = `${log} ${winner.pilotName} has WON`
+    log.forEach(element => {
+        const li = document.createElement('li');
+        li.textContent = element;
+        logContainer.appendChild(li);
+    })
     
 })

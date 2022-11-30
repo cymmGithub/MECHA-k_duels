@@ -271,7 +271,6 @@ li {
     font-size: 20px;
     text-transform: uppercase;
     padding-top: 5px;
-    margin-bottom: 6rem;
     color: #fcfcfc;
     background: #0077b6;
     border: 1px solid #f6f5f6;
@@ -552,8 +551,32 @@ input[type="radio"] {
 
 }
 
+.player>p,
+.enemy>p {
+    display: inline-block;
+    white-space: nowrap;
+
+    color: aliceblue;
+    opacity: 0.8;
+}
+
 .arena_buttons {
     display: flex;
     justify-content: space-evenly;
     height: fit-content;
+}
+
+.log_container {
+
+    height: 200px;
+    overflow: auto;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
+    border-radius: 1rem;
+    margin: 1rem;
+    box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.302);
+    opacity: 0.8;
+}
+
+.log_container>li {
+    font-size: 1rem;
 }
