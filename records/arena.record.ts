@@ -3,17 +3,17 @@ import { PilotRecord } from "./pilot.record";
 
 
 export class Arena implements ArenaSkirmish {
-    public log: String[];
+    public log: String[] = [];
 
     constructor(
         public readonly pilot1: PilotRecord,
         public readonly pilot2: PilotRecord
-    ) {
-        this.log = [];
+    ) { }
 
-    }
     public fight(): PilotRecord {
 
+        // publiczny akces!!!!
+        // postaraj sie stan obiektu zamknac w obiekcie
         this.pilot1['stamina'] = this.pilot1.stamina * 10;
         this.pilot2['stamina'] = this.pilot2.stamina * 10;
 

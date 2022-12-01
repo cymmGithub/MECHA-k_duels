@@ -1,12 +1,21 @@
 import { alertMsgNegative, alertMsgPositive } from "./utils/alert.js";
+import { showPoints } from "./utils/showPointsLeft.js";
 
 const signBtn = document.querySelector('.sign_btn');
 const mechs = document.querySelectorAll('.radio-container');
 const duelLink = document.querySelector('.link.duel');
 
-const mechImg = [...document.querySelectorAll('.radio-image')];
-const heroName = [...document.querySelectorAll('.hero-name')];
-const strength = document.querySelector('.strength');
+const statInputs = document.querySelectorAll('input[type="number"]');
+const pilotName = document.querySelector('input[name="name"]');
+const pilotStr = document.querySelector('input[name="strength"]');
+const pilotSta = document.querySelector('input[name="stamina"]');
+const pilotDef = document.querySelector('input[name="defense"]');
+const pilotAgi = document.querySelector('input[name="agility"]');
+
+
+
+
+showPoints(statInputs);
 
 mechs.forEach((mech, i ) => {
     mech.addEventListener('click', (e)=> {
@@ -25,12 +34,7 @@ mechs.forEach((mech, i ) => {
 
 
 signBtn.addEventListener('click', async ()=> {
-    const pilotName = document.querySelector('input[name="name"]');
-    const strength = document.querySelector('input[name="strength"]');
-    const stamina = document.querySelector('input[name="stamina"]');
-    const defense = document.querySelector('input[name="defense"]');
-    const agility = document.querySelector('input[name="agility"]');
-    console.log(pilotName.value.length);
+
 
     const activeMechData = [];
     mechs.forEach(el => {
@@ -51,10 +55,10 @@ signBtn.addEventListener('click', async ()=> {
         body: JSON.stringify({
             pilotName: pilotName.value,
             mechName,
-            strength: Number(strength.value) + Number(str[str.length-1]),
-            stamina: Number(stamina.value) + Number(sta[sta.length-1]),
-            defense: Number(defense.value) + Number(def[def.length-1]),
-            agility: Number(agility.value) + Number(agi[agi.length-1]),
+            strength: Number(pilotStr.value) + Number(str[str.length-1]),
+            stamina: Number(pilotSta.value) + Number(sta[sta.length-1]),
+            defense: Number(pilotDef.value) + Number(def[def.length-1]),
+            agility: Number(pilotAgi.value) + Number(agi[agi.length-1]),
 
 
 
@@ -75,10 +79,8 @@ signBtn.addEventListener('click', async ()=> {
 
 
 });
-console.log(duelLink);
 
 duelLink.addEventListener('click', async ()=>{
-    console.log('ok');
     const res = await fetch('/duel')
     
 
