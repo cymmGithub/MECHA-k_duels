@@ -102,9 +102,17 @@ main {
     align-items: center;
 }
 
+/* ===================PROFILE-CONFIG ==================*/
 .r-dashboard-up {
     display: flex;
     width: inherit;
+}
+
+.r-dashboard-up-r {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .form_wrapper {
@@ -112,20 +120,35 @@ main {
     height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
+    text-align: center;
     color: #f6f5f6;
     margin: 1rem;
-    font-size: 1rem;
+    font-size: 2rem;
 
 
 }
 
+input {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #24232d;
+    height: 30px;
+    margin: 0.5rem;
+    border-radius: 999px;
+    font-size: 1.5rem;
 
+
+}
+
+input[name=agility] {
+    margin-left: 1.3rem;
+}
 
 input[type=number] {
     display: flex;
-    justify-content: flex-start;
-    font-size: 1.5rem;
+    justify-content: flex-end;
     width: 4rem;
 }
 
@@ -135,7 +158,24 @@ input[type=number] {
     justify-content: space-evenly;
 }
 
+.sign_container {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    width: 10rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-right: 2rem;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
+    box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.302);
+    opacity: 0.8;
+}
 
+
+
+/*======================== HOME====================== */
 .home_img_container {
     display: inline-block;
     position: absolute;
@@ -150,10 +190,10 @@ input[type=number] {
     top: 1rem;
     display: flex;
     font-size: 2rem;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
     border-radius: 1rem;
     padding: 2.8rem;
     margin: 4rem;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
     box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.302);
     opacity: 0.8;
 
@@ -167,7 +207,7 @@ input[type=number] {
 }
 
 .logo_img {
-    height: 10rem;
+    height: 12rem;
     width: auto;
     display: flex;
     justify-content: center;
@@ -384,12 +424,9 @@ input[type="radio"] {
 }
 
 .radio-container.active {
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
-    opacity: 1;
+    background: linear-gradient(to right, rgba(226, 254, 18, 0.394), rgba(255, 255, 255, 0.211));
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
 }
 
 

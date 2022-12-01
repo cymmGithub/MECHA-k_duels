@@ -1,6 +1,6 @@
 import { alertMsgNegative } from "./utils/alert.js";
 
-const duelLink = document.querySelector('.duel_link');
+const duelLink = document.querySelector('.link.duel');
 console.log(duelLink);
 
 

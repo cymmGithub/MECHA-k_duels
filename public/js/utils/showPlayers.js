@@ -12,7 +12,6 @@ export function showPlayers(playerData) {
     const playerImg = new Image();
     
     playerImg.src = `../img/mechs/${playerData.mechName}.png`;
-
     if(playerData.enemy) {
         player.classList.add('enemy');
     }else {

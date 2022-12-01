@@ -26,18 +26,23 @@ duelRouter
 
     })
     .get('/player', async (req, res) => {
-        const { playerId, winnerId } = req.cookies as {
-            playerId: string
-            winnerId: string
+        const { playerId, enemyId, } = req.cookies as {
+            playerId: string,
+            enemyId: string
         }
-        if (winnerId) {
+        if (enemyId) {
             res.status(400);
-            res.json('Wait a bit...')
+            res.json({
+                message: 'Your mech is still resting after last duel. Wait...',
+                time: '23'
+            });
         }
 
-        const player = await PilotRecord.getOne(playerId)
+        const player = await PilotRecord.getOne(playerId);
         res.status(200)
-        res.json(player);
+        res.json(
+            player,
+        );
 
     })
     .post('/start', async (req, res) => {

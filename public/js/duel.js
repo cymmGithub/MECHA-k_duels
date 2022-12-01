@@ -23,7 +23,9 @@ const backgroundNumber = Math.floor(Math.random() * (5 - 1 + 1) + 1);
     const res = await fetch('/duel/player');
     const data = await res.json();
     if(res.status === 400) {
-        alertMsgNegative(data);
+        fightBtn.classList.add('hidden');
+        randomBtn.classList.add('hidden');
+        alertMsgNegative(data.message);
         return;
     }
     showPlayers(data);
