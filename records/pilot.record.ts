@@ -17,6 +17,8 @@ export class PilotRecord {
     public agility: number;
     public wins?: number;
     public enemy?: boolean;
+    public hp: number;
+
 
     constructor(obj: Omit<PilotRecord, 'insert' | 'update'>) {
 
@@ -27,8 +29,10 @@ export class PilotRecord {
         this.strength = strength;
         this.defense = defense;
         this.stamina = stamina;
+        this.hp = this.stamina * 10;
         this.agility = agility;
         this.mechName = mechName;
+        this.healthPoints;
         this.validate();
 
     }
@@ -113,6 +117,12 @@ export class PilotRecord {
 
 
         return result.length > 0;
+    }
+    public set healthPoints(healthPointsLeft) {
+        this.hp = healthPointsLeft;
+    }
+    public get healthPoints(): number {
+        return this.hp;
     }
 }
 
