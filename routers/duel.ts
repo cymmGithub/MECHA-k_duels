@@ -2,7 +2,7 @@ import { Router } from "express";
 import * as path from "path";
 import { Arena } from "../records/arena.record";
 import { PilotRecord } from "../records/pilot.record";
-import { ValidationError } from "../utils/error";
+import { WinnerCookieData } from "../ts/interfaces/cookie";
 
 
 export const duelRouter = Router();
@@ -21,18 +21,18 @@ duelRouter
 
         res
             .sendFile('duel.html', {
-                root: path.join(__dirname, '../public/html')
+                root: path.join(__dirname, '../public/html'),
             })
 
     })
     .get('/player', async (req, res) => {
         const { playerId, winnerCookie, } = req.cookies as {
             playerId: string,
-            winnerCookie: any
+            winnerCookie: WinnerCookieData,
         }
 
         if (winnerCookie) {
-            const winner = await PilotRecord.getOne(winnerCookie.id)
+            const winner = await PilotRecord.getOne(winnerCookie.id);
             const timeLeft = winnerCookie.createdAt + 10 - new Date().getTime() / 1000;
 
             res.status(400);
@@ -60,10 +60,9 @@ duelRouter
 
         const arena = new Arena(player1, player2);
         const winner = arena.fight();
-        console.log(arena.log);
 
         winner.wins++;
-        winner.update(winner.id)
+        winner.update(winner.id);
 
         const winnerCookie = {
             id: winner.id,
@@ -81,4 +80,4 @@ duelRouter
             });
 
 
-    })
+    });

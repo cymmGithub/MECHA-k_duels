@@ -1,4 +1,4 @@
-import { ArenaResult, ArenaSkirmish } from "../ts/interfaces/arena";
+import { ArenaSkirmish } from "../ts/interfaces/arena";
 import { PilotRecord } from "./pilot.record";
 
 
@@ -7,14 +7,14 @@ export class Arena implements ArenaSkirmish {
 
     constructor(
         public readonly pilot1: PilotRecord,
-        public readonly pilot2: PilotRecord
+        public readonly pilot2: PilotRecord,
     ) { }
 
     public fight(): PilotRecord {
 
 
-        let attacker;
-        let defender;
+        let attacker: PilotRecord;
+        let defender: PilotRecord;
 
 
         const starting = Math.floor(Math.random() * 2) - 1;
@@ -34,7 +34,7 @@ export class Arena implements ArenaSkirmish {
         while (true) {
             this.log.push(`${attacker.pilotName} is attacking ${defender.pilotName}`);
             if (defender.hasDefense) {
-                defender.calculateDefenseDamage(attacker, defender, this.log)
+                defender.calculateDefenseDamage(attacker, defender, this.log);
             }
             defender.calculateRawDamage(attacker, defender, this.log);
 

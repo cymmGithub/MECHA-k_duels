@@ -52,7 +52,7 @@ export class PilotRecord {
 
         for (const stat of statsArr) {
             if (stat < 1) {
-                throw new ValidationError('You have to put at least 1 point in every stat')
+                throw new ValidationError('You have to put at least 1 point in every stat');
             }
         }
         if (Number(this.pilotName) || this.pilotName.trim().length < 3 || this.pilotName.trim().length > 20 || !this.pilotName) {
@@ -131,12 +131,12 @@ export class PilotRecord {
     public hasDefense(): boolean {
         return this.defense > 0;
     }
-    public calculateDefenseDamage(attacker: PilotRecord, defender: PilotRecord, commentator: String[]) {
+    public calculateDefenseDamage(attacker: PilotRecord, defender: PilotRecord, commentator: String[]): void {
 
 
         if (attacker.strength <= defender.defensePoints) {
 
-            commentator.push(`${defender.pilotName} BLOCKED ${attacker.pilotName}'s attack`)
+            commentator.push(`${defender.pilotName} BLOCKED ${attacker.pilotName}'s attack`);
             defender.defensePoints -= (attacker.strength - (Math.round(defender.agility / 5)));
 
 
@@ -157,13 +157,10 @@ export class PilotRecord {
             if (!this.hasDefense) {
                 defender.healthPoints += defender.defensePoints;
             }
-
-
-
         }
 
     }
-    public calculateRawDamage(attacker: PilotRecord, defender: PilotRecord, commentator: String[]) {
+    public calculateRawDamage(attacker: PilotRecord, defender: PilotRecord, commentator: String[]): void {
         if (attacker.strength > defender.defensePoints && defender.defensePoints <= 0) {
             defender.healthPoints -= (attacker.strength - (Math.round(defender.agility / 5)));
 
