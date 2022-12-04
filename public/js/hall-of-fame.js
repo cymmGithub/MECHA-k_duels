@@ -74,8 +74,7 @@ duelLink.addEventListener('click', async ()=>{
 
     if(res.status === 400) {
         const data = await res.json();
-        alertMsgNegative(data)
-        return;
+        return alertMsgNegative(data)
     }
     window.location.href = '/duel';
 
