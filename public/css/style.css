@@ -24,6 +24,10 @@ main {
     -webkit-text-fill-color: transparent;
 }
 
+.points_left_color {
+    color: #CF1512;
+}
+
 .glass {
     display: flex;
     background: white;

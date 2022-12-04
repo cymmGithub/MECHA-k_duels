@@ -2,6 +2,7 @@
 export const showPoints = (statInputs)=> {
     const signContainer = document.querySelector('.sign_container');
     const signBtn = document.querySelector('.sign_btn');
+    const pointsLeftNumber = document.querySelector('span');
 
     let availablePts = 10;
 
@@ -16,6 +17,9 @@ export const showPoints = (statInputs)=> {
                 inputSum += Number(input.value);
             })
            const pointsLeft = availablePts - inputSum;
+           const p = document.createElement('p');
+
+
            if(pointsLeft === 0) {
                 signBtn.classList.add('animate__fadeIn');
                 signBtn.classList.remove('hidden');
@@ -24,9 +28,18 @@ export const showPoints = (statInputs)=> {
             signBtn.classList.add('hidden');
 
            }
+           const pointsLeftNumberCheat = `<span class='points_left_color'>${-pointsLeft}</span>`;
+           const pointsLeftNumber = `<span class='points_left_color'>${pointsLeft}</span>`;
 
-           pointsLeft < 0 ? signContainer.textContent = `Do not cheat, please substract ${-pointsLeft} points` : signContainer.textContent = `You have ${pointsLeft} points left to distribute`;
 
+           signContainer.textContent = '';
+
+
+           pointsLeft < 0 ? p.innerHTML = `Do not cheat, please substract ${pointsLeftNumberCheat} points` : p.innerHTML = `REGISTER NEW PILOT You have ${pointsLeftNumber} points left to distribute`;
+           
+
+
+           signContainer.appendChild(p);
         })
 
     });
