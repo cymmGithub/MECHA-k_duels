@@ -11,13 +11,14 @@ export class PilotRecord {
     public id?: string;
     public readonly pilotName: string;
     public readonly mechName: string;
-    public strength: number;
-    public defense: number;
-    public stamina: number;
-    public agility: number;
+    public readonly strength: number;
+    public readonly stamina: number;
+    public readonly agility: number;
+    public readonly defense: number;
     public wins?: number;
     public enemy?: boolean;
-    public hp: number;
+    private hp: number;
+    private defensePoints: number;
 
 
     constructor(obj: Omit<PilotRecord, 'insert' | 'update'>) {
@@ -28,6 +29,7 @@ export class PilotRecord {
         this.pilotName = pilotName;
         this.strength = strength;
         this.defense = defense;
+        this.defensePoints = defense + (wins * 0.2)
         this.stamina = stamina;
         this.hp = this.stamina * 10;
         this.agility = agility;
@@ -36,6 +38,13 @@ export class PilotRecord {
         this.validate();
 
     }
+    public set healthPoints(healthPointsLeft: number) {
+        this.hp = healthPointsLeft;
+    }
+    public get healthPoints(): number {
+        return this.hp;
+    }
+
 
     private validate() {
         const statsArr = [this.strength, this.defense, this.stamina, this.agility];
@@ -117,12 +126,50 @@ export class PilotRecord {
 
 
         return result.length > 0;
-    }
-    public set healthPoints(healthPointsLeft) {
-        this.hp = healthPointsLeft;
-    }
-    public get healthPoints(): number {
-        return this.hp;
-    }
-}
+    };
 
+    public hasDefense(): boolean {
+        return this.defense > 0;
+    }
+    public calculateDefenseDamage(attacker: PilotRecord, defender: PilotRecord, commentator: String[]) {
+
+
+        if (attacker.strength <= defender.defensePoints) {
+
+            commentator.push(`${defender.pilotName} BLOCKED ${attacker.pilotName} attack`)
+            defender.defensePoints -= (attacker.strength - (Math.round(defender.agility / 5)));
+
+
+            if (!this.hasDefense) {
+                commentator.push(`${attacker.pilotName} ??? succesfully broke ${defender.pilotName} defense ----- ${defender.pilotName} has no defense left`);
+                defender.healthPoints += defender.defensePoints;
+            }
+
+
+        } else if (attacker.strength > defender.defensePoints && this.hasDefense) {
+
+            defender.defensePoints -= (attacker.strength - (Math.round(defender.agility / 5)));
+
+            defender.defensePoints <= 0 ?
+                commentator.push(`${attacker.pilotName} broke  ${defender.pilotName} defense ----- ${defender.pilotName} has no defense left`) :
+                commentator.push(`${attacker.pilotName} almost broke ${defender.pilotName} defense ----- ${defender.pilotName} got only ${defender.defensePoints} DP left`);
+
+            if (!this.hasDefense) {
+                defender.healthPoints += defender.defensePoints;
+            }
+
+
+
+        }
+
+    }
+    public calculateRawDamage(attacker: PilotRecord, defender: PilotRecord, commentator: String[]) {
+        if (attacker.strength > defender.defensePoints && defender.defensePoints <= 0) {
+            defender.healthPoints -= (attacker.strength - (Math.round(defender.agility / 5)));
+
+            commentator.push(`${attacker.pilotName} successfully attacked ${defender.pilotName} for ${attacker.strength} damage ----- ${defender.pilotName} has ${defender.healthPoints < 0 ? 0 : defender.healthPoints} hp left`);
+        }
+
+    }
+
+}

@@ -25,52 +25,25 @@ export class Arena implements ArenaSkirmish {
             attacker = this.pilot2;
             defender = this.pilot1;
         }
+        return this.getWinner(attacker, defender)
 
-        do {
-            this.log.push(`${attacker.pilotName} is attacking ${defender.pilotName}`)
+    }
 
-            if (attacker.strength <= defender.defense) {
+    private getWinner(attacker: PilotRecord, defender: PilotRecord): PilotRecord {
 
-                this.log.push(`${defender.pilotName} BLOCKED ${attacker.pilotName} attack`)
-                defender.defense -= (attacker.strength - (Math.round(defender.agility / 5)));
-
-
-                if (defender.defense <= 0) {
-                    this.log.push(`${attacker.pilotName} ??? succesfully broke ${defender.pilotName} defense ----- ${defender.pilotName} has no defense left`);
-                    defender.healthPoints += defender.defense;
-                }
-
-
-            } else if (attacker.strength > defender.defense && defender.defense > 0) {
-
-                defender.defense -= (attacker.strength - (Math.round(defender.agility / 5)));
-
-                defender.defense <= 0 ?
-                    this.log.push(`${attacker.pilotName} broke  ${defender.pilotName} defense ----- ${defender.pilotName} has no defense left`) :
-                    this.log.push(`${attacker.pilotName} almost broke ${defender.pilotName} defense ----- ${defender.pilotName} got only ${defender.defense} DP left`);
-
-                if (defender.defense < 0) {
-                    defender.healthPoints += defender.defense;
-                }
-
-
-
-            } else if (attacker.strength > defender.defense && defender.defense <= 0) {
-                defender.healthPoints -= (attacker.strength - (Math.round(defender.agility / 5)));
-
-                this.log.push(`${attacker.pilotName} successfully attacked ${defender.pilotName} for ${attacker.strength} damage ----- ${defender.pilotName} has ${defender.healthPoints < 0 ? 0 : defender.healthPoints} hp left`);
+        while (true) {
+            this.log.push(`${attacker.pilotName} is attacking ${defender.pilotName}`);
+            if (defender.hasDefense) {
+                defender.calculateDefenseDamage(attacker, defender, this.log)
             }
+            defender.calculateRawDamage(attacker, defender, this.log);
 
             if (defender.healthPoints <= 0) {
                 this.log.push(`${defender.pilotName} is defeated`);
+                return attacker;
             }
             [defender, attacker] = [attacker, defender];
 
-        } while (attacker.healthPoints > 0 && defender.healthPoints > 0)
-
-        const winner = defender;
-
-        return winner;
-
+        }
     }
 }
