@@ -297,7 +297,7 @@ li {
 /**********************  BUTTONS ********************/
 
 .play_btn,
-.sub_btn {
+.sign_btn {
     position: absolute;
     top: 13rem;
     left: 40rem;
@@ -359,9 +359,9 @@ li {
 .play_btn:focus,
 .play_btn:hover,
 .play_btn:active,
-.sub_btn:focus,
-.sub_btn:hover,
-.sub_btn:active {
+.sign_btn:focus,
+.sign_btn:hover,
+.sign_btn:active {
     transition: 1s;
     border: none;
     text-transform: uppercase;

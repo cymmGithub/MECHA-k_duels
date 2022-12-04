@@ -17,6 +17,7 @@ const pilotAgi = document.querySelector('input[name="agility"]');
 
 showPoints(statInputs);
 
+
 mechs.forEach((mech, i ) => {
     mech.addEventListener('click', (e)=> {
         mechs.forEach((el, index)=> {
