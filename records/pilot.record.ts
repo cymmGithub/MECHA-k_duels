@@ -136,12 +136,12 @@ export class PilotRecord {
 
         if (attacker.strength <= defender.defensePoints) {
 
-            commentator.push(`${defender.pilotName} BLOCKED ${attacker.pilotName} attack`)
+            commentator.push(`${defender.pilotName} BLOCKED ${attacker.pilotName}'s attack`)
             defender.defensePoints -= (attacker.strength - (Math.round(defender.agility / 5)));
 
 
             if (!this.hasDefense) {
-                commentator.push(`${attacker.pilotName} ??? succesfully broke ${defender.pilotName} defense ----- ${defender.pilotName} has no defense left`);
+                commentator.push(`${attacker.pilotName} succesfully broke ${defender.pilotName}'s defense ----- ${defender.pilotName} has no defense left`);
                 defender.healthPoints += defender.defensePoints;
             }
 
@@ -151,8 +151,8 @@ export class PilotRecord {
             defender.defensePoints -= (attacker.strength - (Math.round(defender.agility / 5)));
 
             defender.defensePoints <= 0 ?
-                commentator.push(`${attacker.pilotName} broke  ${defender.pilotName} defense ----- ${defender.pilotName} has no defense left`) :
-                commentator.push(`${attacker.pilotName} almost broke ${defender.pilotName} defense ----- ${defender.pilotName} got only ${defender.defensePoints} DP left`);
+                commentator.push(`${attacker.pilotName} broke  ${defender.pilotName}'s defense ----- ${defender.pilotName} has no defense left`) :
+                commentator.push(`${attacker.pilotName} almost broke ${defender.pilotName}'s defense ----- ${defender.pilotName} got only ${defender.defensePoints.toFixed(1)} DP left`);
 
             if (!this.hasDefense) {
                 defender.healthPoints += defender.defensePoints;
@@ -167,7 +167,7 @@ export class PilotRecord {
         if (attacker.strength > defender.defensePoints && defender.defensePoints <= 0) {
             defender.healthPoints -= (attacker.strength - (Math.round(defender.agility / 5)));
 
-            commentator.push(`${attacker.pilotName} successfully attacked ${defender.pilotName} for ${attacker.strength} damage ----- ${defender.pilotName} has ${defender.healthPoints < 0 ? 0 : defender.healthPoints} hp left`);
+            commentator.push(`${attacker.pilotName} successfully attacked ${defender.pilotName} for ${attacker.strength} damage ----- ${defender.pilotName} has ${defender.healthPoints < 0 ? 0 : defender.healthPoints} HP left`);
         }
 
     }

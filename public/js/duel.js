@@ -10,10 +10,12 @@ const mechsWrapper = document.querySelector('.mechs');
 const againBtn = document.querySelector('.again_btn');
 
 
-const backgroundNumber = Math.floor(Math.random() * (5 - 1 + 1) + 1);
+
 
 //======================Duel page init====================//
 (async() => {
+    const backgroundNumber = Math.floor(Math.random() * (5 - 1 + 1) + 1);
+
     arenaImg.style.background = `url('../img/background/${backgroundNumber}.jpg')`;
     arenaImg.style.backgroundSize = 'cover'; 
     arenaImg.style.backgroundRepeat = 'no-repeat'; 
@@ -22,14 +24,14 @@ const backgroundNumber = Math.floor(Math.random() * (5 - 1 + 1) + 1);
 
     const res = await fetch('/duel/player');
     const data = await res.json();
+
     if(res.status === 400) {
-        fightBtn.classList.add('hidden');
-        randomBtn.classList.add('hidden');
         alertMsgNegative(data.message);
-        return;
+        return showWinner(data.winner);
     }
+
     showPlayers(data);
-    againBtn.classList.remove('again_btn');
+    againBtn.classList.remove("again_btn");
     againBtn.classList.add('disabled_btn');
 
     
@@ -39,6 +41,11 @@ const backgroundNumber = Math.floor(Math.random() * (5 - 1 + 1) + 1);
 //======================Get random opponent====================//
 randomBtn.addEventListener('click', async (e)=> {
     e.preventDefault();
+    const enemy = document.querySelector('.enemy');
+
+    if(enemy){
+    enemy.remove();
+    }
 
     const res = await fetch('/pilot/random-opponent');
 
@@ -93,8 +100,7 @@ fightBtn.addEventListener('click', async (e)=> {
     });
 
     mechsWrapper.classList.add('hidden');
-    fightBtn.classList.add('hidden');
-    randomBtn.classList.add('hidden');
+
     againBtn.classList.remove('disabled_btn');
     againBtn.classList.add('again_btn');
     againBtn.disabled = false;
@@ -107,3 +113,19 @@ fightBtn.addEventListener('click', async (e)=> {
 })
 
 //======================Fight again====================//
+ againBtn.addEventListener('click', async (e)=> {
+        const res = await fetch('/duel/player');
+        const data = await res.json();
+        
+        
+        if(res.status === 400) {
+            return alertMsgNegative(data.message);
+        }
+
+
+        window.location.href = '/duel';
+
+
+
+
+    });

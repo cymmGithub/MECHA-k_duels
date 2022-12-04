@@ -17,15 +17,22 @@ PilotRouter
             })
     })
     .get('/random-opponent', async (req, res) => {
-        const { playerId, enemyId } = req.cookies;
-        if (enemyId) {
-            throw new ValidationError('Finish your fight first');
+        const { playerId, winnerCookie } = req.cookies;
+
+
+
+
+        if (winnerCookie) {
+            const timeLeft = (winnerCookie.createdAt + 10) - new Date().getTime() / 1000;
+
+            throw new ValidationError(`Your Mech is still resting after last fight. Wait ${timeLeft} s.`);
 
         }
 
         const randomOpponent = await PilotRecord.getRandom(playerId);
 
         randomOpponent['enemy'] = true;
+
 
         res
             .cookie('enemyId', randomOpponent.id)

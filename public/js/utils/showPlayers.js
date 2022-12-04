@@ -1,8 +1,9 @@
 
-const mechsWrapper = document.querySelector('.mechs');
 
 
 export function showPlayers(playerData) {
+const mechsWrapper = document.querySelector('.mechs');
+
     const player = document.createElement('div');
     player.setAttribute('id', `${playerData.id}`);
     

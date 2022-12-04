@@ -8,7 +8,7 @@ export const showPoints = (statInputs)=> {
 
     [...statInputs].forEach(input=> {
 
-        input.addEventListener('change', ()=> {
+        input.addEventListener('input', ()=> {
             let inputSum = 0;
 
             [...statInputs].forEach(input=> {

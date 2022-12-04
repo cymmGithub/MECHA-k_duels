@@ -26,27 +26,32 @@ duelRouter
 
     })
     .get('/player', async (req, res) => {
-        const { playerId, enemyId, } = req.cookies as {
+        const { playerId, winnerCookie, } = req.cookies as {
             playerId: string,
-            enemyId: string
+            winnerCookie: any
         }
-        if (enemyId) {
+
+        if (winnerCookie) {
+            const winner = await PilotRecord.getOne(winnerCookie.id)
+            const timeLeft = winnerCookie.createdAt + 10 - new Date().getTime() / 1000;
+
             res.status(400);
             res.json({
-                message: 'Your mech is still resting after last duel. Wait...',
-                time: '23'
+                message: `Your mech is still resting after last duel. Wait ${Math.round(timeLeft)} s.`,
+                winner
             });
         }
 
         const player = await PilotRecord.getOne(playerId);
-        res.status(200)
-        res.json(
-            player,
-        );
+
+        res
+            .status(200)
+            .json(
+                player,
+            );
 
     })
     .post('/start', async (req, res) => {
-        console.log(req.cookies);
 
         const { playerId, enemyId } = req.body;
 
@@ -60,8 +65,15 @@ duelRouter
         winner.wins++;
         winner.update(winner.id)
 
+        const winnerCookie = {
+            id: winner.id,
+            createdAt: new Date().getTime() / 1000,
+        }
+
         res
-            .cookie('winnerId', winner.id)
+            .cookie('winnerCookie', winnerCookie, {
+                maxAge: 10 * 1000,
+            })
             .status(200)
             .json({
                 winner,
