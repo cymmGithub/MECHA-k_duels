@@ -25,5 +25,5 @@ app.use('/duel', duelRouter);
 app.use(handleError);
 
 app.listen(Number(process.env.PORT) || 3000, '0.0.0.0', () => {
-  console.log('Listening......');
+  console.log('Server is running...');
 });
