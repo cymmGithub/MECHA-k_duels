@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/index.js",
-    "postinstall": "mv -i -v public dist/ && npm run copy-files",
+    "start:dev": "tsnd index.ts",
+    "clean": "rimraf dist/",
     "copy-files": "copyfiles -u 1 public/**/*.html public/**/*.css dist/",
-    "start:dev": "tsnd index.ts"
+    "build": "tsc && && npm run copy-files",
+    "postinstall": "mv -i -v public dist/"
   },
   "type": "commonjs",
   "keywords": [],
