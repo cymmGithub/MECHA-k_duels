@@ -23,6 +23,6 @@ app.use('/hall-of-fame', hall_of_fame_1.hallOfFameRouter);
 app.use('/duel', duel_1.duelRouter);
 app.use(error_1.handleError);
 app.listen(Number(process.env.PORT) || 3000, '0.0.0.0', () => {
-    console.log('Server is running...');
+    console.log('Listening......');
 });
 //# sourceMappingURL=index.js.map

@@ -18,7 +18,7 @@ function handleError(error, req, res, next) {
         console.error(error);
     }
     res.status(500);
-    res.json('Sorry try again later');
+    res.json(error.message);
 }
 exports.handleError = handleError;
 //# sourceMappingURL=error.js.map
