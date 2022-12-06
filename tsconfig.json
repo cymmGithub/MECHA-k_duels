@@ -9,7 +9,7 @@
             "ES6",
             "DOM.Iterable"
         ],
-        "outDir": "build",
+        "outDir": "dist",
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "moduleResolution": "node"

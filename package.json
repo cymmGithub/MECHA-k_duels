@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node build/index.js",
-    "postinstall": "tsc",
+    "start": "node dist/index.js",
     "start:dev": "tsnd index.ts"
   },
   "type": "module",
