@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/index.js",
+    "postinstall": "mv -i -v public dist/ && rm -v -rf src",
     "start:dev": "tsnd index.ts"
   },
   "type": "commonjs",
