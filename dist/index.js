@@ -1,7 +1,7 @@
 import  express from 'express';
 import 'express-async-errors';
 import * as methodOverride from 'method-override';
-import * as cookieParser from 'cookie-parser';
+import cookieParser from 'cookie-parser';
 import { duelRouter } from './routers/duel.js';
 import { hallOfFameRouter } from './routers/hall-of-fame.js';
 import { homeRouter } from './routers/home.js';
