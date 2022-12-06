@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href="https://github.com/cymmGithub/MECHA-k_duels">
-    <img src="https://i.postimg.cc/k4vwxTf8/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://imgur.com/a/ly80rFt" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">MECHA-k_duels</h3>
