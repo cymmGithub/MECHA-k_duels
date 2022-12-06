@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { Router } from "express";
 import * as path from "path";
-import { PilotRecord } from "../records/pilot.record";
+import { PilotRecord } from "../records/pilot.record.js";
 export const hallOfFameRouter = Router();
 hallOfFameRouter
     .get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
