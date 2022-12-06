@@ -17,6 +17,7 @@ export function handleError(error: any, req: Request, res: Response, next: NextF
             .json(error.message)
         console.error(error)
     }
+
     res.status(500);
-    res.json('Sorry try again later')
+    res.json(error.message)
 }
