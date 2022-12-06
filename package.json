@@ -8,8 +8,7 @@
     "start:dev": "tsnd index.ts",
     "clean": "rimraf dist/",
     "copy-files": "copyfiles -u 1 public/**/*.html public/**/*.css dist/",
-    "build": "tsc && && npm run copy-files",
-    "postinstall": "mv -i -v public dist/"
+    "postinstall": "mv -i -v public dist/ && npm run copy-files"
   },
   "type": "commonjs",
   "keywords": [],
