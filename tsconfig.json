@@ -3,10 +3,10 @@
         "noImplicitAny": true,
         "preserveConstEnums": true,
         "sourceMap": true,
-        "target": "ES6",
+        "target": "ES2015",
         "downlevelIteration": true,
         "lib": [
-            "ES6",
+            "ES2015",
             "DOM.Iterable"
         ],
         "outDir": "dist",
