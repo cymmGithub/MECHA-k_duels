@@ -9,7 +9,6 @@
             "ES2015",
             "DOM.Iterable"
         ],
-        "allowJs": true,
         "outDir": "dist",
         "module": "commonjs",
         "experimentalDecorators": true,

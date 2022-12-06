@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/index.js",
-    "start:dev": "tsnd index.ts",
-    "copy-files": "copyfiles -u 1 public/**/*.html public/**/*.css dist/",
-    "postinstall": "npm run copy-files"
+    "start:dev": "tsnd index.ts"
   },
   "type": "commonjs",
   "keywords": [],
