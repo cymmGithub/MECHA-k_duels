@@ -46,7 +46,7 @@ function createRanking(data) {
         li.style.background = 'url("../img/ui/Raleigh_ranking.png") ,linear-gradient(to right, #b1b0ab,#0781d2)';
         break;
       default:
-        li.style.background = 'Sorry but we could not load your mech img';
+        li.style.background = 'Sorry we did not find your mech img';
     }
 
     mark.textContent = `${el.name}`;
