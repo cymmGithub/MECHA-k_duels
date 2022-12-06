@@ -1,4 +1,4 @@
-import { alertMsgNegative } from './utils/alert.js';
+import { alertMsgNegative } from './utils/alert.js.js';
 
 const duelLink = document.querySelector('.link.duel');
 

@@ -1,5 +1,5 @@
-import { alertMsgNegative, alertMsgPositive } from './utils/alert.js';
-import { showPoints } from './utils/showPointsLeft.js';
+import { alertMsgNegative, alertMsgPositive } from './utils/alert.js.js';
+import { showPoints } from './utils/showPointsLeft.js.js';
 
 const signBtn = document.querySelector('.sign_btn');
 const mechs = document.querySelectorAll('.radio-container');

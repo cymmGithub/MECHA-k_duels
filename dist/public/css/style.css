@@ -425,6 +425,7 @@ input[type="radio"] {
     align-items: center;
     margin: 0.5rem;
     font-weight: 100;
+    font-size: 1.05rem;
 }
 
 .radio-container.active {

@@ -1,6 +1,6 @@
-import { alertMsgNegative } from './utils/alert.js';
-import { showPlayers } from './utils/showPlayers.js';
-import { showWinner } from './utils/showWinner.js';
+import { alertMsgNegative } from './utils/alert.js.js';
+import { showPlayers } from './utils/showPlayers.js.js';
+import { showWinner } from './utils/showWinner.js.js';
 
 const randomBtn = document.querySelector('.random_btn');
 const fightBtn = document.querySelector('.fight_btn');

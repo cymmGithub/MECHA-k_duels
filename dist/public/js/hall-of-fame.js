@@ -1,4 +1,4 @@
-import { alertMsgNegative } from './utils/alert.js';
+import { alertMsgNegative } from './utils/alert.js.js';
 
 const ranking = document.querySelector('.ranking_list');
 const duelLink = document.querySelector('.link.duel');
