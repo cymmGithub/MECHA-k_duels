@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dist/index.js",
     "postinstall": "mv -i -v public dist/ && copy-files",
-    "copy-files": "copyfiles -u 1 src/**/*.html src/**/*.css dist/",
+    "copy-files": "copyfiles -u 1 public/**/*.html public/**/*.css dist/",
     "start:dev": "tsnd index.ts"
   },
   "type": "commonjs",
