@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -7,12 +8,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { Router } from "express";
-import path from "path";
-import { Arena } from "../records/arena.record.js";
-import { PilotRecord } from "../records/pilot.record.js";
-export const duelRouter = Router();
-duelRouter
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.duelRouter = void 0;
+const express_1 = require("express");
+const path = require("path");
+const arena_record_1 = require("../records/arena.record");
+const pilot_record_1 = require("../records/pilot.record");
+exports.duelRouter = (0, express_1.Router)();
+exports.duelRouter
     .get('/', (req, res) => {
     const { playerId } = req.cookies;
     if (!playerId) {
@@ -27,7 +30,7 @@ duelRouter
     .get('/player', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { playerId, winnerCookie, } = req.cookies;
     if (winnerCookie) {
-        const winner = yield PilotRecord.getOne(winnerCookie.id);
+        const winner = yield pilot_record_1.PilotRecord.getOne(winnerCookie.id);
         const timeLeft = winnerCookie.createdAt + 10 - new Date().getTime() / 1000;
         res.status(400);
         res.json({
@@ -35,16 +38,16 @@ duelRouter
             winner
         });
     }
-    const player = yield PilotRecord.getOne(playerId);
+    const player = yield pilot_record_1.PilotRecord.getOne(playerId);
     res
         .status(200)
         .json(player);
 }))
     .post('/start', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { playerId, enemyId } = req.body;
-    const player1 = yield PilotRecord.getOne(playerId);
-    const player2 = yield PilotRecord.getOne(enemyId);
-    const arena = new Arena(player1, player2);
+    const player1 = yield pilot_record_1.PilotRecord.getOne(playerId);
+    const player2 = yield pilot_record_1.PilotRecord.getOne(enemyId);
+    const arena = new arena_record_1.Arena(player1, player2);
     const winner = arena.fight();
     winner.wins++;
     winner.update(winner.id);

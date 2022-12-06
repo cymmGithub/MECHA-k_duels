@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -7,10 +8,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { Router } from "express";
-import path from "path";
-export const homeRouter = Router();
-homeRouter
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.homeRouter = void 0;
+const express_1 = require("express");
+const path = require("path");
+exports.homeRouter = (0, express_1.Router)();
+exports.homeRouter
     .get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res
         .sendFile('index.html', {

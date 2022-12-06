@@ -1,4 +1,7 @@
-export class Arena {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Arena = void 0;
+class Arena {
     constructor(pilot1, pilot2) {
         this.pilot1 = pilot1;
         this.pilot2 = pilot2;
@@ -33,4 +36,5 @@ export class Arena {
         }
     }
 }
+exports.Arena = Arena;
 //# sourceMappingURL=arena.record.js.map
