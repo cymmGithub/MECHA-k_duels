@@ -7,6 +7,7 @@ import { hallOfFameRouter } from './routers/hall-of-fame';
 import { homeRouter } from './routers/home';
 import { PilotRouter } from './routers/pilot';
 import { handleError } from './utils/error';
+import { config } from './config';
 
 const app = express();
 
@@ -24,6 +25,6 @@ app.use('/hall-of-fame', hallOfFameRouter);
 app.use('/duel', duelRouter);
 app.use(handleError);
 
-app.listen(3000, 'localhost', () => {
+app.listen(config.server.port, 'localhost', () => {
   console.log('Listening on http://localhost:3000');
 });
