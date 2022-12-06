@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href="https://github.com/cymmGithub/MECHA-k_duels">
-    <img src="https://imgur.com/a/ly80rFt" alt="Logo" width="80" height="80">
+    <img src="https://i.imgur.com/X7za2Ds.png" alt="Logo" width="661" height="291">
   </a>
 
 <h3 align="center">MECHA-k_duels</h3>
@@ -16,7 +16,11 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Simple 1vs1 fighting game based on combat text logger.
+Simple 1vs1 fighting game based on combat log, where you can:
+* create your own Pilot
+* choose one of the available mechs
+* fight with random opponent 
+* and in the end check if you were able to get into top 8 pilots in ranking section.
 <div display="flex">
  <img src="https://i.imgur.com/QUMbaAZ.jpg" width="400">
  <img src="https://i.imgur.com/WMJx774.jpg" width="400">
