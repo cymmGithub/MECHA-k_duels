@@ -37,7 +37,7 @@ signBtn.addEventListener('click', async () => {
   });
   const [mechName, str, sta, def, agi] = activeMechData;
 
-  const res = await fetch('https://mecha-k-duels.herokuapp.com/pilot', {
+  const res = await fetch('/pilot', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ signBtn.addEventListener('click', async () => {
 });
 
 duelLink.addEventListener('click', async () => {
-  const res = await fetch('https://mecha-k-duels.herokuapp.com/duel');
+  const res = await fetch('/duel');
 
   if (res.status === 400) {
     const data = await res.json();

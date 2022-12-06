@@ -18,10 +18,12 @@ const againBtn = document.querySelector('.again_btn');
   arenaImg.style.backgroundRepeat = 'no-repeat';
   arenaImg.style.backgroundPosition = 'center';
 
-  const res = await fetch('https://mecha-k-duels.herokuapp.com/duel/player');
+  const res = await fetch('/duel/player');
   const data = await res.json();
 
   if (res.status === 400) {
+    againBtn.disabled = false;
+
     alertMsgNegative(data.message);
     return showWinner(data.winner);
   }
@@ -40,7 +42,7 @@ randomBtn.addEventListener('click', async (e) => {
     enemy.remove();
   }
 
-  const res = await fetch('https://mecha-k-duels.herokuapp.com/pilot/random-opponent');
+  const res = await fetch('/pilot/random-opponent');
 
   if (res.status === 400) {
     const data = await res.json();
@@ -63,7 +65,7 @@ fightBtn.addEventListener('click', async (e) => {
     return;
   }
 
-  const res = await fetch('https://mecha-k-duels.herokuapp.com/duel/start', {
+  const res = await fetch('/duel/start', {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
@@ -99,7 +101,7 @@ fightBtn.addEventListener('click', async (e) => {
 
 //= =====================Fight again====================//
 againBtn.addEventListener('click', async (e) => {
-  const res = await fetch('https://mecha-k-duels.herokuapp.com/duel/player');
+  const res = await fetch('/duel/player');
   const data = await res.json();
 
   if (res.status === 400) {

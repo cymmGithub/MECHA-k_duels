@@ -382,7 +382,7 @@ li {
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
     flex-direction: row;
-    margin: 2rem;
+    margin: 1rem 2rem 2rem 2rem;
     opacity: 0.8;
 
 }
@@ -605,7 +605,7 @@ input[type="radio"] {
     height: 6rem;
     position: absolute;
     left: 22rem;
-    bottom: 20rem;
+    bottom: 18.5rem;
 }
 
 
@@ -622,7 +622,7 @@ input[type="radio"] {
     height: 14rem;
     position: absolute;
     left: 30rem;
-    bottom: 21rem;
+    bottom: 20rem;
     padding: 2rem;
 }
 
