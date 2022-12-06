@@ -24,6 +24,6 @@ app.use('/hall-of-fame', hallOfFameRouter);
 app.use('/duel', duelRouter);
 app.use(handleError);
 
-app.listen(3000, 'localhost', () => {
-  console.log('Listening on http://localhost:3000');
+app.listen(Number(process.env.PORT) || 3000, '0.0.0.0', () => {
+  console.log('Listening......');
 });
