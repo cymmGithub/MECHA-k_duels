@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node public/build/index.js",
     "start:dev": "tsnd index.ts",
-    "build": "tsc"
+    "postinstall": "tsc",
+    "deploy": "git add . && git commit -m Heroku && git push heroku master"
   },
   "type": "commonjs",
   "keywords": [],
