@@ -7,9 +7,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { ValidationError } from "../utils/error";
+import { ValidationError } from "../utils/error.js";
 import { v4 as uuid } from 'uuid';
-import { pool } from "../utils/db";
+import { pool } from "../utils/db.js";
 export class PilotRecord {
     constructor(obj) {
         const { id, pilotName, strength, defense, stamina, agility, wins, mechName } = obj;

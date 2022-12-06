@@ -9,8 +9,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { Router } from "express";
 import * as path from "path";
-import { Arena } from "../records/arena.record";
-import { PilotRecord } from "../records/pilot.record";
+import { Arena } from "../records/arena.record.js";
+import { PilotRecord } from "../records/pilot.record.js";
 export const duelRouter = Router();
 duelRouter
     .get('/', (req, res) => {
