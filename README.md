@@ -20,7 +20,7 @@ Simple 1vs1 fighting game based on combat log, where you can:
 * create your own Pilot
 * choose one of the available mechs
 * fight with random opponent 
-* and in the end check if you were able to get into top 8 pilots in ranking section.
+* check if you were able to get into top 8 pilots in ranking section.
 <div display="flex">
  <img src="https://i.imgur.com/QUMbaAZ.jpg" width="400">
  <img src="https://i.imgur.com/WMJx774.jpg" width="400">
