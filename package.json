@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node public/dist/index.js",
     "start:dev": "tsnd index.ts",
-    "postinstall": "mv -i -v public dist/ && rm -v -rf src",
     "deploy": "git add . && git commit -m Heroku && git push heroku main"
   },
   "type": "commonjs",
