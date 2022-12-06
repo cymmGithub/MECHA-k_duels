@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node public/build/index.js",
-    "start:dev": "tsnd index.ts"
+    "start:dev": "tsnd index.ts",
+    "build": "tsc"
   },
   "type": "commonjs",
   "keywords": [],
