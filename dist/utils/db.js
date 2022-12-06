@@ -1,8 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.pool = void 0;
-const promise_1 = require("mysql2/promise");
-exports.pool = (0, promise_1.createPool)({
+import { createPool } from "mysql2/promise";
+export const pool = createPool({
     host: 'localhost',
     user: 'cymm',
     password: '&4hUgrW4LnkcJ5sfV5ogBsTPuYkENA',

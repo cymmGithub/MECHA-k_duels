@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,14 +7,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.PilotRouter = void 0;
-const express_1 = require("express");
-const path = require("path");
-const pilot_record_1 = require("../records/pilot.record");
-const error_1 = require("../utils/error");
-exports.PilotRouter = (0, express_1.Router)();
-exports.PilotRouter
+import { Router } from 'express';
+import * as path from 'path';
+import { PilotRecord } from '../records/pilot.record';
+import { ValidationError } from '../utils/error';
+export const PilotRouter = Router();
+PilotRouter
     .get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res
         .sendFile('pilot-configurator.html', {
@@ -26,16 +23,16 @@ exports.PilotRouter
     const { playerId, winnerCookie } = req.cookies;
     if (winnerCookie) {
         const timeLeft = (winnerCookie.createdAt + 10) - new Date().getTime() / 1000;
-        throw new error_1.ValidationError(`Your Mech is still resting after last fight. Wait ${timeLeft} s.`);
+        throw new ValidationError(`Your Mech is still resting after last fight. Wait ${timeLeft} s.`);
     }
-    const randomOpponent = yield pilot_record_1.PilotRecord.getRandom(playerId);
+    const randomOpponent = yield PilotRecord.getRandom(playerId);
     randomOpponent.enemy = true;
     res
         .cookie('enemyId', randomOpponent.id)
         .json(randomOpponent);
 }))
     .post('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const newPilot = new pilot_record_1.PilotRecord(Object.assign(Object.assign({}, req.body), { strength: req.body.strength, defense: req.body.defense, stamina: req.body.stamina, agility: req.body.agility }));
+    const newPilot = new PilotRecord(Object.assign(Object.assign({}, req.body), { strength: req.body.strength, defense: req.body.defense, stamina: req.body.stamina, agility: req.body.agility }));
     yield newPilot.insert();
     res
         .cookie('playerId', newPilot.id)

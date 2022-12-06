@@ -1,10 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.handleError = exports.ValidationError = void 0;
-class ValidationError extends Error {
+export class ValidationError extends Error {
 }
-exports.ValidationError = ValidationError;
-function handleError(error, req, res, next) {
+export function handleError(error, req, res, next) {
     if (error.code === 'ER_DUP_ENTRY') {
         res
             .status(400)
@@ -20,5 +16,4 @@ function handleError(error, req, res, next) {
     res.status(500);
     res.json('Sorry try again later');
 }
-exports.handleError = handleError;
 //# sourceMappingURL=error.js.map

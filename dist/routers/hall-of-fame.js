@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,13 +7,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.hallOfFameRouter = void 0;
-const express_1 = require("express");
-const path = require("path");
-const pilot_record_1 = require("../records/pilot.record");
-exports.hallOfFameRouter = (0, express_1.Router)();
-exports.hallOfFameRouter
+import { Router } from "express";
+import * as path from "path";
+import { PilotRecord } from "../records/pilot.record";
+export const hallOfFameRouter = Router();
+hallOfFameRouter
     .get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res
         .sendFile('hall-of-fame.html', {
@@ -22,7 +19,7 @@ exports.hallOfFameRouter
     });
 }))
     .get('/top-mechs', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const topPilots = yield pilot_record_1.PilotRecord.listTop(8);
+    const topPilots = yield PilotRecord.listTop(8);
     const data = topPilots.map(pilot => {
         return {
             name: pilot.pilotName,

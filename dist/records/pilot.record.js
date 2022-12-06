@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,15 +7,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.PilotRecord = void 0;
-const error_1 = require("../utils/error");
-const uuid_1 = require("uuid");
-const db_1 = require("../utils/db");
-class PilotRecord {
+import { ValidationError } from "../utils/error";
+import { v4 as uuid } from 'uuid';
+import { pool } from "../utils/db";
+export class PilotRecord {
     constructor(obj) {
         const { id, pilotName, strength, defense, stamina, agility, wins, mechName } = obj;
-        this.id = id !== null && id !== void 0 ? id : (0, uuid_1.v4)();
+        this.id = id !== null && id !== void 0 ? id : uuid();
         this.wins = wins !== null && wins !== void 0 ? wins : 0;
         this.pilotName = pilotName;
         this.strength = strength;
@@ -40,19 +37,19 @@ class PilotRecord {
         const sum = statsArr.reduce((prev, curr) => prev + curr, 0);
         for (const stat of statsArr) {
             if (stat < 1) {
-                throw new error_1.ValidationError('You have to put at least 1 point in every stat');
+                throw new ValidationError('You have to put at least 1 point in every stat');
             }
         }
         if (Number(this.pilotName) || this.pilotName.trim().length < 3 || this.pilotName.trim().length > 20 || !this.pilotName) {
-            throw new error_1.ValidationError(`Your pilotName have to be between 3 and 20 chars, actually it is ${this.pilotName.length}`);
+            throw new ValidationError(`Your pilotName have to be between 3 and 20 chars, actually it is ${this.pilotName.length}`);
         }
         if (sum !== 18) {
-            throw new error_1.ValidationError(`Sum of your abilities has to be 18, actually it is ${sum}`);
+            throw new ValidationError(`Sum of your abilities has to be 18, actually it is ${sum}`);
         }
     }
     insert() {
         return __awaiter(this, void 0, void 0, function* () {
-            yield db_1.pool.execute('INSERT INTO `pilots` VALUES (:id, :pilotName, :strength, :defense, :stamina, :agility, :wins, :mechName)', {
+            yield pool.execute('INSERT INTO `pilots` VALUES (:id, :pilotName, :strength, :defense, :stamina, :agility, :wins, :mechName)', {
                 id: this.id,
                 pilotName: this.pilotName,
                 strength: this.strength,
@@ -67,7 +64,7 @@ class PilotRecord {
     }
     update(id) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield db_1.pool.execute('UPDATE `pilots` SET `wins` = :wins WHERE `id` = :id', {
+            yield pool.execute('UPDATE `pilots` SET `wins` = :wins WHERE `id` = :id', {
                 wins: this.wins,
                 id,
             });
@@ -75,7 +72,7 @@ class PilotRecord {
     }
     static getOne(id) {
         return __awaiter(this, void 0, void 0, function* () {
-            const [result] = yield db_1.pool.execute('SELECT * FROM `pilots` WHERE `id` = :id', {
+            const [result] = yield pool.execute('SELECT * FROM `pilots` WHERE `id` = :id', {
                 id,
             });
             return result.length === 0 ? null : new PilotRecord(result[0]);
@@ -83,7 +80,7 @@ class PilotRecord {
     }
     static getRandom(id) {
         return __awaiter(this, void 0, void 0, function* () {
-            const [result] = yield db_1.pool.execute('SELECT * FROM `pilots` WHERE NOT `id` = :id', {
+            const [result] = yield pool.execute('SELECT * FROM `pilots` WHERE NOT `id` = :id', {
                 id,
             });
             const mechList = result.map(obj => new PilotRecord(obj));
@@ -92,13 +89,13 @@ class PilotRecord {
     }
     static listAll() {
         return __awaiter(this, void 0, void 0, function* () {
-            const [result] = yield db_1.pool.execute('SELECT * FROM `pilots` ORDER BY `pilotName`');
+            const [result] = yield pool.execute('SELECT * FROM `pilots` ORDER BY `pilotName`');
             return result.map(obj => new PilotRecord(obj));
         });
     }
     static listTop(topCount) {
         return __awaiter(this, void 0, void 0, function* () {
-            const [result] = yield db_1.pool.execute('SELECT * FROM `pilots` ORDER BY `wins` DESC LIMIT :topCount', {
+            const [result] = yield pool.execute('SELECT * FROM `pilots` ORDER BY `wins` DESC LIMIT :topCount', {
                 topCount: topCount.toString(),
             });
             return result.map(obj => new PilotRecord(obj));
@@ -106,7 +103,7 @@ class PilotRecord {
     }
     static isNameTaken(pilotName) {
         return __awaiter(this, void 0, void 0, function* () {
-            const [result] = yield db_1.pool.execute('SELECT * FROM `pilots` WHERE `pilotName` = :pilotName', {
+            const [result] = yield pool.execute('SELECT * FROM `pilots` WHERE `pilotName` = :pilotName', {
                 pilotName,
             });
             return result.length > 0;
@@ -142,5 +139,4 @@ class PilotRecord {
         }
     }
 }
-exports.PilotRecord = PilotRecord;
 //# sourceMappingURL=pilot.record.js.map
