@@ -5,7 +5,7 @@ const duelLink = document.querySelector('.link.duel');
 console.log(duelLink);
 
 (async () => {
-  const res = await fetch('/hall-of-fame/top-mechs');
+  const res = await fetch('https://mecha-k-duels.herokuapp.com/hall-of-fame/top-mechs');
   const data = await res.json();
 
   createRanking(data);
@@ -58,11 +58,11 @@ function createRanking(data) {
 }
 
 duelLink.addEventListener('click', async () => {
-  const res = await fetch('/duel');
+  const res = await fetch('https://mecha-k-duels.herokuapp.com/duel');
 
   if (res.status === 400) {
     const data = await res.json();
     return alertMsgNegative(data);
   }
-  window.location.href = '/duel';
+  window.location.href = 'https://mecha-k-duels.herokuapp.com/duel';
 });

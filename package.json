@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/index.js",
-    "start:dev": "tsnd index.ts"
+    "start": "node public/dist/index.js",
+    "start:dev": "tsnd index.ts",
+    "build": "tsc"
   },
   "type": "commonjs",
   "keywords": [],
-  "author": "",
+  "author": "Cymm",
   "license": "ISC",
   "dependencies": {
     "cookie-parser": "^1.4.6",
