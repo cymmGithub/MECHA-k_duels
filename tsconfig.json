@@ -9,7 +9,7 @@
             "ES2015",
             "DOM.Iterable"
         ],
-        "outDir": "public/build",
+        "outDir": "dist",
         "module": "commonjs",
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
