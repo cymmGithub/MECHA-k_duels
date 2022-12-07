@@ -37,6 +37,16 @@ signBtn.addEventListener('click', async () => {
   });
   const [mechName, str, sta, def, agi] = activeMechData;
 
+  const mechStats =  {
+    str: str ? Number(str[str.length - 1]) : 0,
+    sta: sta ? Number(sta[sta.length - 1]) : 0,
+    def: def ? Number(def[def.length - 1]) : 0,
+    agi: agi ? Number(agi[agi.length - 1]) : 0,
+    
+  }
+
+
+  console.log(mechStats);
   const res = await fetch('/pilot', {
     method: 'POST',
     headers: {
@@ -45,10 +55,10 @@ signBtn.addEventListener('click', async () => {
     body: JSON.stringify({
       pilotName: pilotName.value,
       mechName,
-      strength: Number(pilotStr.value) + Number(str[str.length - 1]),
-      stamina: Number(pilotSta.value) + Number(sta[sta.length - 1]),
-      defense: Number(pilotDef.value) + Number(def[def.length - 1]),
-      agility: Number(pilotAgi.value) + Number(agi[agi.length - 1]),
+      strength: Number(pilotStr.value) + mechStats.str,
+      stamina: Number(pilotSta.value) + mechStats.sta,
+      defense: Number(pilotDef.value) + mechStats.def,
+      agility: Number(pilotAgi.value) + mechStats.agi,
 
     }),
   });
