@@ -1,11 +1,11 @@
 import { createPool } from "mysql2/promise";
-import { DB_DATABASE, DB_HOST, DB_PASSWORD, DB_USER } from "../config";
+import { dbConnectionConfig } from "../config";
 
 export const pool = createPool({
-    host: DB_HOST,
-    user: DB_USER,
-    password: DB_PASSWORD,
-    database: DB_DATABASE,
+    host: dbConnectionConfig.DB_HOST,
+    user: dbConnectionConfig.DB_USER,
+    password: dbConnectionConfig.DB_PASSWORD,
+    database: dbConnectionConfig.DB_DATABASE,
     namedPlaceholders: true,
     decimalNumbers: true,
 });
