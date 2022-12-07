@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MECHA k-duels</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jomhuria&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<main>
+    <section class="glass">
+        <div class="l-dashboard">
+            <div class="logo">
+                <img class="logo_img" src="./img/ui/logo.png" alt="">
+
+            </div>
+            <div class="links">
+                    <a href="/"
+                        style="text-decoration: none;">
+                            <div class="link">
+                                <img class="icon "src="./img/ui/house.png" alt="">
+                                <h2>Home</h2>
+                            </div>
+                        </a>
+                    <a href="/pilot"
+                        style="text-decoration: none;">
+                            <div class="link">
+                                <img class="icon "src="./img/ui/user.png" alt="">
+                                <h2>Profile</h2>
+                            </div>
+                        </a>
+                    <a href="/duel"
+                        style="text-decoration: none;">
+                            <div class="link">
+                                <img class="icon "src="./img/ui/duel-icon.png" alt="">
+                                <h2>Duel</h2>
+                            </div>
+                        </a>
+                <a href="/hall-of-fame"
+                    style="text-decoration: none;">
+                        <div class="link">
+                            <img class="icon "src="./img/ui/ranking.png" alt="">
+                            <h2>Ranking</h2>
+                        </div>
+                    </a>
+            </div>
+
+        </div>
+            <div class="r-dashboard">
+
+                    <div class="arena">
+                            <div class="winner-container hidden">
+
+                            </div>
+                            <div class="mechs">
+                                
+                            </div>
+                    </div>
+                    <div class="arena_buttons">
+
+                            <button class="fight_btn" >
+                                Fight
+                            </button>
+                            <button class="again_btn" disabled>
+                                Try Again
+                            </button>
+                            <button class="random_btn" >
+                                Find Random Opponent
+                            </button>
+                    </div>
+                    <div class="log_container hidden">
+
+                    </div>
+
+     
+             
+            </div>
+    </section>
+</main>
+<div class="circle1"></div>
+<div class="circle2"></div>
+
+
+<script type="module"src="../js/duel.js"></script>
+</body>
+
+</html>

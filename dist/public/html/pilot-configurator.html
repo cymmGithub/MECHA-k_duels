@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MECHA k-duels</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jomhuria&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<main>
+    <section class="glass">
+        <div class="l-dashboard">
+            <div class="logo">
+                <img class="logo_img" src="./img/ui/logo.png" alt="">
+
+            </div>
+            <div class="links">
+                    <a href="/"
+                        style="text-decoration: none;">
+                            <div class="link">
+                                <img class="icon "src="./img/ui/house.png" alt="">
+                                <h2>Home</h2>
+                            </div>
+                        </a>
+                    <a href="/pilot"
+                        style="text-decoration: none;">
+                            <div class="link">
+                                <img class="icon "src="./img/ui/user.png" alt="">
+                                <h2>Profile</h2>
+                            </div>
+                        </a>
+                            
+                        <div class="link duel">
+                            <img class="icon "src="./img/ui/duel-icon.png" alt="">
+                            <h2>Duel</h2>
+                        </div>
+                    
+                <a href="/hall-of-fame"
+                    style="text-decoration: none;">
+                        <div class="link">
+                            <img class="icon "src="./img/ui/ranking.png" alt="">
+                            <h2>Ranking</h2>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+                <div class="r-dashboard">
+                    <div class="r-dashboard-up">
+                        <div class="form_wrapper">
+                            <label class="label_form">
+                                Pilot Name: <input type="text" name="name" minlength="3" maxlength="55" required>
+                            </label> 
+
+                            <label class="label_form">
+                                Strength: <input type="number" name="strength" value="1" min="1" max="10">
+                            </label> 
+                            <label class="label_form">
+                                Defense: <input type="number" name="defense" value="1" min="1" max="10">
+                            </label>
+                            <label class="label_form">
+                                Stamina: <input type="number" name="stamina" value="1" min="1" max="10">
+                            </label>
+                            <label class="label_form">
+                                Agility: <input type="number" name="agility" value="1" min="1" max="10">
+                            </label>
+                    </div>
+                    <div class="r-dashboard-up-r">
+                            <div class="sign_container">
+                                <p>REGISTER NEW PILOT You have <span class="points_left_color">6</span> points left to distribute</p>
+                            </div>
+                            <button class="sign_btn hidden" type="submit">Sign up</button>
+
+
+                    </div>
+                    </div>
+
+                    <div class="mech_container">
+                        <label class="radio-container active" data-warrior="blackbeard">
+
+                            <input name="mechName" type="radio"  value="blackbeard" checked >
+                                <img src="../img/mechs/Blackbeard.png" class="radio-image">
+                                <div class="name_stats">
+                                <span class="hero-name">Blackbeard</span>
+                                    <span>STR +1</span>
+                                    <span>STA +3</span>
+                                    <span>DEF +3</span>
+                                    <span>AGI +1</span>
+
+                                </div>
+                        </label>
+
+                        <label class="radio-container" data-warrior="atlas">
+
+                            <input name="mechName" type="radio" value="atlas" >
+                                <img src="../img/mechs/Atlas.png" class="radio-image">
+                                <div class="name_stats">
+                                <span class="hero-name">Atlas</span>
+                                    <span>STR +3</span>
+                                    <span>STA +1</span>
+                                    <span>DEF +1</span>
+                                    <span>AGI +3</span>
+
+                                </div>
+                        </label>
+                        <label class="radio-container" data-warrior="nelson">
+
+                            <input name="mechName" type="radio"  value="nelson"  >
+                                <img src="../img/mechs/Nelson.png" class="radio-image">
+                                <div class="name_stats">
+                                <span class="hero-name">Nelson</span>
+                                    <span>STR +5</span>
+                                    <span>STA +1</span>
+                                    <span>DEF +1</span>
+                                    <span>AGI +1</span>
+
+                                </div>
+                        </label>
+                        <label class="radio-container" data-warrior="barbarossa">
+
+                            <input name="mechName" type="radio"  value="barbarossa"  >
+                                <img src="../img/mechs/Barbarossa.png" class="radio-image">
+                                <div class="name_stats">
+                                <span class="hero-name">Barbarossa</span>
+                                    <span>STR +8</span>
+                            
+
+                                </div>
+                        </label>
+                        <label class="radio-container " data-warrior="ronin">
+
+                            <input name="mechName" type="radio"  value="ronin" >
+                                <img src="../img/mechs/Ronin.png" class="radio-image">
+                                <div class="name_stats">
+                                <span class="hero-name hero">Ronin</span>
+                                    <span class="strength">STR +1</span>
+                                    <span class="stamina">STA +1</span>
+                                    <span class="defense">DEF +2</span>
+                                    <span class="agility">AGI +4</span>
+
+                                </div>
+                        </label>
+
+                        <label class="radio-container" data-warrior="raleigh">
+
+                            <input name="mechName" type="radio"  value="raleigh"  >
+                                <img src="../img/mechs/Raleigh.png" class="radio-image">
+                                <div class="name_stats">
+                                <span class="hero-name">Raleigh</span>
+                                    <span>STR +4</span>
+                                    <span>STA +2</span>
+                                    <span>DEF +1</span>
+                                    <span>AGI +1</span>
+
+                                </div>
+                        </label>
+                        <label class="radio-container" >
+
+                            <input name="mechName" type="radio"  value="tortuga"  >
+                                <img src="../img/mechs/Tortuga.png" class="radio-image">
+                                <div class="name_stats">
+                                <span class="hero-name">Tortuga</span>
+                                    <span>STR +2</span>
+                                    <span>STA +2</span>
+                                    <span>DEF +2</span>
+                                    <span>AGI +2</span>
+
+                                </div>
+                        </label>
+                        <label class="radio-container" data-warrior="scourer">
+
+                            <input name="mechName" type="radio"  value="scourer"  >
+                                <img src="../img/mechs/Scourer.png" class="radio-image">
+                                <div class="name_stats">
+                                <span class="hero-name">Scourer</span>
+                                    <span>STR +1</span>
+                                    <span>STA +7</span>
+
+                                </div>
+                        </label>
+
+                        <label class="radio-container" data-warrior="zheng">
+
+                            <input name="mechName" type="radio"  value="zheng"  >
+                                <img src="../img/mechs/Zheng.png" class="radio-image">
+                                <div class="name_stats">
+                                <span class="hero-name">Zheng</span>
+                                    <span>STR +2</span>
+                                    <span>STA +1</span>
+                                    <span>DEF +1</span>
+                                    <span>AGI +4</span>
+
+                                </div>
+                        </label>
+
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+    </section>
+</main>
+<div class="circle1"></div>
+<div class="circle2"></div>
+
+<script type="module" src="../js/pilot-configurator.js"></script>
+
+</body>
+
+</html>
