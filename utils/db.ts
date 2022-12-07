@@ -1,10 +1,11 @@
 import { createPool } from "mysql2/promise";
+import { DB_DATABASE, DB_HOST, DB_PASSWORD, DB_USER } from "../config";
 
 export const pool = createPool({
-    host: 'eu-cdbr-west-03.cleardb.net',
-    user: 'b0c20bf719b99a',
-    password: '87589e57',
-    database: 'heroku_a018b6f7c278bce',
+    host: DB_HOST,
+    user: DB_USER,
+    password: DB_PASSWORD,
+    database: DB_DATABASE,
     namedPlaceholders: true,
     decimalNumbers: true,
 });
