@@ -33,11 +33,9 @@ export class Arena implements ArenaSkirmish {
 
         while (true) {
             this.log.push(`${attacker.pilotName} is attacking ${defender.pilotName}`);
-            if (defender.hasDefense()) {
-                defender.calculateDefenseDamage(attacker, defender, this.log);
-            }
-
-            defender.calculateRawDamage(attacker, defender, this.log);
+            defender.hasDefense() ?
+                defender.calculateDefenseDamage(attacker, defender, this.log) :
+                defender.calculateRawDamage(attacker, defender, this.log);
 
 
             if (defender.healthPoints <= 0) {
