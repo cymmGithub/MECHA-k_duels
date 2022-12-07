@@ -138,7 +138,7 @@ class PilotRecord {
     calculateRawDamage(attacker, defender, commentator) {
         if (attacker.strength > defender.defensePoints && defender.defensePoints <= 0) {
             defender.healthPoints -= (attacker.strength - (Math.round(defender.agility / 5)));
-            commentator.push(`${attacker.pilotName} successfully attacked ${defender.pilotName} for ${attacker.strength} damage ----- ${defender.pilotName} has ${defender.healthPoints < 0 ? 0 : defender.healthPoints.toFixed(0)} HP left`);
+            commentator.push(`${attacker.pilotName} successfully attacked ${defender.pilotName} for ${attacker.strength} damage ----- ${defender.pilotName} has ${defender.healthPoints < 0 ? 0 : defender.healthPoints.toFixed(1)} HP left`);
         }
     }
 }
