@@ -1,4 +1,2 @@
 node_modules/
-
 dist/
-utils/db.ts

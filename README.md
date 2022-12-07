@@ -8,7 +8,7 @@
 <h3 align="center">MECHA-k_duels</h3>
 
   <p align="center">
-    <a href="https://github.com/github_username/repo_name"><strong>LIVE VERSION</strong></a>
+    <a href="https://mecha-k-duels.herokuapp.com/"><strong>LIVE VERSION</strong></a>
   </p>
 </div>
 
