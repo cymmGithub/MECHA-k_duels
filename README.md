@@ -3,7 +3,7 @@
 <div align="center">
   <a href="https://github.com/cymmGithub/MECHA-k_duels">
 <div display="flex"   >
-    <img src="https://i.imgur.com/X7za2Ds.png" alt="Logo" width="321" height="161">
+    <img src="https://i.imgur.com/X7za2Ds.png" alt="Logo" width="321" height="151">
   
   </div>
   </a>
