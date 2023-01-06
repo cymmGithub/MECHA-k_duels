@@ -19,7 +19,8 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Simple 1vs1 fighting game based on combat log, where you can:
+Simple 1vs1 fighting game based on combat log, where I had my first touch with TS.
+As a player you can:
 * Create your own pilot
 * Choose one of the available mechs
 * Fight with random opponent 
