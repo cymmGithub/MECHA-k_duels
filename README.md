@@ -44,7 +44,7 @@ As a player you can:
 <img src="https://skillicons.dev/icons?i=ts,express,mysql" />
 
   
-#### Mech graphics are created by <a href='https://itch.io/profile/alicefish11'> Alice J Shade Fish</a> and <ins> i do not intend to use them commercially.</ins>
+#### Mech graphics are created by <a href='https://itch.io/profile/alicefish11'> Alice J Shade Fish</a> and <ins> i do not intend to use them commercially, but only for educational purpose</ins>
   
 </div>
 
